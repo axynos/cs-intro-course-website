@@ -3,29 +3,6 @@
 let andmed = null
 let mall = null
 
-function urlParameetridAndmeteks(urlParameetrid) {
-    const urlParameetridObjekt = new URLSearchParams(urlParameetrid)
-
-/*  const tõsidus = 'kodutöö'
-    const aine = 'MMP'
-    const õppejõud = 'Albert Saanlo'
-    const õpilane = 'Jaagup Saminossov'
-    const meiliaadress = 'albert.saanlo@ut.ee' */
-
-    return {
-        tõsidus: tõsidus,
-        aine: aine,
-        õppejõud: õppejõud,
-        õpilane: õpilane,
-        meiliaadress: meiliaadress
-    }
-}
-
-function andmedUrlParameetriteks(andmed) {
-    // TODO: urlencode
-    return `?tosidus=${andmed.tõsidus}&aine=${andmed.aine}&opjd=${andmed.õppejõud}&opl=${andmed.õpilane}&aadr=${andmed.meiliaadress}`
-}
-
 // Genereerib uue vabanduse ja kuvab selle
 function genereeriUusVabandus() {
     mall = valiMall(andmed)

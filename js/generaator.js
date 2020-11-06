@@ -36,3 +36,21 @@ function koostaVabandus(mall, andmed) {
         mailto: mailto
     }
 }
+
+// Teisendab andmete objekti url parameetrite sõneks
+function andmedUrlParameetriteks(andmed) {
+    // TODO: urlencode
+    return `?tosidus=${andmed.tõsidus}&aine=${andmed.aine}&opjd=${andmed.õppejõud}&opl=${andmed.õpilane}&aadr=${andmed.meiliaadress}`
+}
+
+// Teisendab andmed url parameetrite sõnest andmete objektiks
+function urlParameetridAndmeteks(urlParameetrid) {
+    const urlParameetridObjekt = new URLSearchParams(urlParameetrid) 
+    return {
+        tõsidus: urlParameetridObjekt.get('tosidus'),
+        aine: urlParameetridObjekt.get('aine'),
+        õppejõud: urlParameetridObjekt.get('opjd'),
+        õpilane: urlParameetridObjekt.get('opl'),
+        meiliaadress: urlParameetridObjekt.get('aadr')
+    }
+}
