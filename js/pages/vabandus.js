@@ -1,19 +1,23 @@
-// Abifunktsioonid
+// ABIFUNKTSIOONID
 
-let andmed = null
-let mall = null
-
-// Genereerib uue vabanduse ja kuvab selle
-function genereeriUusVabandus() {
-    mall = valiMall(andmed)
-    const vabandus = koostaVabandus(mall, andmed)
-    kuvaVabandus(vabandus)
+// Kogub sisenditest andmed
+function koguAndmed(sisendid) {
+    return {
+        tõsidus: sisendid.tõsidus.value,
+        aine: sisendid.aine.value,
+        õppejõud: sisendid.õppejõud.value,
+        õpilane: sisendid.õpilane.value,
+        meiliaadress: sisendid.meiliaadress.value
+    }
 }
 
-// Kuvab vabanduse uuendatud andmetega
-function uuendaVabandust() {
+// Uuendab vabanduse kuvatud infot ning vabanduse parameetreid url-is
+function uuendaVabandust(mall, andmed) {
     const vabandus = koostaVabandus(mall, andmed)
     kuvaVabandus(vabandus)
+
+    // Uuendame url-is parameetreid (https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState)
+    history.replaceState(andmed, vabandus.ülevaade, andmedUrlParameetriteks(andmed))
 }
 
 // Kuvab koostatud vabanduse lehel
@@ -22,32 +26,38 @@ function kuvaVabandus(vabandus) {
 }
 
 
-// Lehe käivitumisel jooksev kood
+// LEHE KÄIVITUMISEL JOOKSEV KOOD
 
 // Hangime url parameetritest esialgsed andmed
-andmed = urlParameetridAndmeteks(window.location.search)
+const algsedAndmed = urlParameetridAndmeteks(window.location.search)
 
 // Genereerime esialgse vabanduse
-genereeriUusVabandus()
+let mall = valiMall(algsedAndmed)
+uuendaVabandust(mall, algsedAndmed)
 
-// Hangime sisendikastide HTML elemendid ning sisestame esialgsed andmed sisendikastidesse
+// Hangime sisendite HTML elemendid
 const sisendid = {
-    tõsidus: document.getElementById('tõsidus'),
-    aine: document.getElementById('aine'),
-    õppejõud: document.getElementById('õppejõud'),
-    õpilane: document.getElementById('õpilane'),
-    meiliaadress: document.getElementById('meiliaadress')
+    tõsidus: document.getElementById('tõsidus-input'),
+    aine: document.getElementById('aine-input'),
+    õppejõud: document.getElementById('õppejõud-input'),
+    õpilane: document.getElementById('õpilane-input'),
+    meiliaadress: document.getElementById('meiliaadress-input')
 }
 
-// Seame väljade algsed väärtused
-sisendid.tõsidus.value = andmed.tõsidus
-sisendid.aine.value = andmed.aines
-sisendid.õppejõud.value = andmed.õppejõud
-sisendid.õpilane.value = andmed.õpilane
-sisendid.meiliaadress.value = andmed.meiliaadress
+// Määrame sisendite algsed väärtused ning seame üles reageerimise muutustele
+sisendid.tõsidus.value = algsedAndmed.tõsidus
+sisendid.aine.value = algsedAndmed.aine
+sisendid.õppejõud.value = algsedAndmed.õppejõud
+sisendid.õpilane.value = algsedAndmed.õpilane
+sisendid.meiliaadress.value = algsedAndmed.meiliaadress
 
-// Seame üles funktsioonid mis uuendavad vabandust, kui sisestatud andmed muutuvad
-// TODO
+sisendid.aine.addEventListener('input', e => uuendaVabandust(mall, koguAndmed(sisendid)))
+sisendid.õppejõud.addEventListener('input', e => uuendaVabandust(mall, koguAndmed(sisendid)))
+sisendid.õpilane.addEventListener('input', e => uuendaVabandust(mall, koguAndmed(sisendid)))
+sisendid.meiliaadress.addEventListener('input', e => uuendaVabandust(mall, koguAndmed(sisendid)))
 
-// Seame üles funktsiooni mis genereerib uue vabanduse kui vajutatakse vastavale nupule
-// TODO
+// Seame üles uue vabanduse valimise ning kuvamise nupule vajutamisel
+document.getElementById('generate-button').addEventListener('click', e => {
+    mall = valiMall(algsedAndmed)
+    uuendaVabandust(mall, koguAndmed(sisendid))
+})
