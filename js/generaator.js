@@ -10,7 +10,7 @@
 */
 
 function chooseTemplate(andmed) {
-    const possibleTemplates = templates[andmed.tõsidus] || templates.kodutöö
+    const possibleTemplates = templates[andmed.seriousness] || templates.kodutöö
     return possibleTemplates[Math.floor(Math.random() * possibleTemplates.length)]
 }
 
