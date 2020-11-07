@@ -9,9 +9,9 @@
         <vabanduse mall JS=i objektina>
 */
 
-function valiMall(andmed) {
-    võimalikudMallid = mallid[andmed.tõsidus]
-    return võimlikudVabandused[Math.floor(Math.random() * võimlikudVabandused.length)]
+function chooseTemplate(andmed) {
+    const possibleTemplates = templates[andmed.tõsidus] || templates.kodutöö
+    return possibleTemplates[Math.floor(Math.random() * possibleTemplates.length)]
 }
 
 /*
@@ -24,33 +24,35 @@ function valiMall(andmed) {
     Väljund:
         <koostatud vabandus JS-i objektina, kuhu on kõik vajalikud andmed sisestatud>
 */
-function koostaVabandus(mall, andmed) {
-    const pealkiri = mall.pealkiri(andmed)
-    const meil = mall.meil(andmed)
-    const mailto = `mailto:${andmed.meiliaadress}?subject=${encodeURIComponent(pealkiri)}&body=${encodeURIComponent(meil)}`
+function assembleApology(template, data) {
+    const heading = template.heading(data)
+    const mail = template.mail(data)
 
     return {
-        ülevaade: mall.ülevaade,
-        pealkiri: pealkiri,
-        meil: meil,
-        mailto: mailto
+        overview: template.overview,
+        heading: heading,
+        mail: mail
     }
 }
 
+function assembleMailto(apology, data) {
+    return `mailto:${data.address}?subject=${encodeURIComponent(apology.heading)}&body=${encodeURIComponent(apology.mail)}`
+}
+
 // Teisendab andmete objekti url parameetrite sõneks
-function andmedUrlParameetriteks(andmed) {
+function dataToUrlParams(andmed) {
     // TODO: urlencode
-    return `?tosidus=${andmed.tõsidus}&aine=${andmed.aine}&opjd=${andmed.õppejõud}&opl=${andmed.õpilane}&aadr=${andmed.meiliaadress}`
+    return `?ser=${andmed.seriousness}&subj=${andmed.subject}&teach=${andmed.teacher}&stud=${andmed.student}&adr=${andmed.address}`
 }
 
 // Teisendab andmed url parameetrite sõnest andmete objektiks
-function urlParameetridAndmeteks(urlParameetrid) {
+function urlParamsToData(urlParameetrid) {
     const urlParameetridObjekt = new URLSearchParams(urlParameetrid) 
     return {
-        tõsidus: urlParameetridObjekt.get('tosidus'),
-        aine: urlParameetridObjekt.get('aine'),
-        õppejõud: urlParameetridObjekt.get('opjd'),
-        õpilane: urlParameetridObjekt.get('opl'),
-        meiliaadress: urlParameetridObjekt.get('aadr')
+        seriousness: urlParameetridObjekt.get('ser') || '',
+        subject: urlParameetridObjekt.get('subj') || '',
+        teacher: urlParameetridObjekt.get('teach') || '',
+        student: urlParameetridObjekt.get('stud') || '',
+        address: urlParameetridObjekt.get('adr') || ''
     }
 }

@@ -1,27 +1,76 @@
-// ABIFUNKTSIOONID
+// FUNKTSIOONID SISENDITE HALDAMISEKS
+
+// Hangime sisendite HTML elemendid
+const inputs = {
+    seriousness: document.getElementById('seriousness-input'),
+    subject: document.getElementById('subject-input'),
+    teacher: document.getElementById('teacher-input'),
+    student: document.getElementById('student-input'),
+    address: document.getElementById('address-input')
+}
 
 // Kogub sisenditest andmed
-function koguAndmed(sisendid) {
+function collectData() {
     return {
-        tõsidus: sisendid.tõsidus.value,
-        aine: sisendid.aine.value,
-        õppejõud: sisendid.õppejõud.value,
-        õpilane: sisendid.õpilane.value,
-        meiliaadress: sisendid.meiliaadress.value
+        seriousness: inputs.seriousness.value,
+        subject: inputs.subject.value,
+        teacher: inputs.teacher.value,
+        student: inputs.student.value,
+        address: inputs.address.value
     }
 }
 
-// Uuendab vabanduse kuvatud infot ning vabanduse parameetreid url-is
-function uuendaVabandust(mall, andmed) {
-    const vabandus = koostaVabandus(mall, andmed)
-    kuvaVabandus(vabandus)
+// FUNKTSIOONID VABANDUSTE UUENDAMISEKS JA KUVAMISEKS
 
+let data = null
+let template = null
+let apology = null
+
+function updateData() {
+    data = collectData()
     // Uuendame url-is parameetreid (https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState)
-    history.replaceState(andmed, vabandus.ülevaade, andmedUrlParameetriteks(andmed))
+    history.replaceState(data, '', dataToUrlParams(data))
+}
+
+function generateNewApology() {
+    template = chooseTemplate(data)
+    updateApology()
+    renderNewApologyAnimation()
+}
+
+function updateApology() {
+    apology = assembleApology(template, data)
+    renderApology(apology)
+}
+
+function updateMailto() {
+    const mailto = assembleMailto(apology, data)
+    renderMailto(mailto)
+}
+
+// ABIFUNKTSIOONID VABANDUSTE KUVAMISEKS
+
+const outputs = {
+    overview: document.getElementById("overview"),
+    heading: document.getElementById("heading-preview"),
+    mail: document.getElementById("mail-preview"),
+    mailto: document.getElementById("mailto-link")
 }
 
 // Kuvab koostatud vabanduse lehel
-function kuvaVabandus(vabandus) {
+function renderApology(apology) {
+    outputs.overview.textContent = apology.overview
+    outputs.heading.textContent = apology.heading
+    outputs.mail.textContent = apology.mail
+}
+
+// Kuvab mailto lingi lehel
+function renderMailto(mailto) {
+    outputs.mailto.href = mailto
+}
+
+// Kuvab uue vabanduse genereerimise animatsioonid
+function renderNewApologyAnimation() {
     // TODO
 }
 
@@ -29,35 +78,29 @@ function kuvaVabandus(vabandus) {
 // LEHE KÄIVITUMISEL JOOKSEV KOOD
 
 // Hangime url parameetritest esialgsed andmed
-const algsedAndmed = urlParameetridAndmeteks(window.location.search)
-
-// Genereerime esialgse vabanduse
-let mall = valiMall(algsedAndmed)
-uuendaVabandust(mall, algsedAndmed)
-
-// Hangime sisendite HTML elemendid
-const sisendid = {
-    tõsidus: document.getElementById('tõsidus-input'),
-    aine: document.getElementById('aine-input'),
-    õppejõud: document.getElementById('õppejõud-input'),
-    õpilane: document.getElementById('õpilane-input'),
-    meiliaadress: document.getElementById('meiliaadress-input')
-}
+data = urlParamsToData(window.location.search)
 
 // Määrame sisendite algsed väärtused ning seame üles reageerimise muutustele
-sisendid.tõsidus.value = algsedAndmed.tõsidus
-sisendid.aine.value = algsedAndmed.aine
-sisendid.õppejõud.value = algsedAndmed.õppejõud
-sisendid.õpilane.value = algsedAndmed.õpilane
-sisendid.meiliaadress.value = algsedAndmed.meiliaadress
+inputs.seriousness.value = data.seriousness
+inputs.subject.value = data.subject
+inputs.teacher.value = data.teacher
+inputs.student.value = data.student
+inputs.address.value = data.address
 
-sisendid.aine.addEventListener('input', e => uuendaVabandust(mall, koguAndmed(sisendid)))
-sisendid.õppejõud.addEventListener('input', e => uuendaVabandust(mall, koguAndmed(sisendid)))
-sisendid.õpilane.addEventListener('input', e => uuendaVabandust(mall, koguAndmed(sisendid)))
-sisendid.meiliaadress.addEventListener('input', e => uuendaVabandust(mall, koguAndmed(sisendid)))
+inputs.subject.addEventListener('input', e => { updateData(); updateApology() })
+inputs.teacher.addEventListener('input', e => { updateData(); updateApology() })
+inputs.student.addEventListener('input', e => { updateData(); updateApology() })
+inputs.address.addEventListener('input', e => { updateData(); updateApology() })
 
-// Seame üles uue vabanduse valimise ning kuvamise nupule vajutamisel
+// Seame üles uue apologye valimise ning kuvamise nupule vajutamisel
 document.getElementById('generate-button').addEventListener('click', e => {
-    mall = valiMall(algsedAndmed)
-    uuendaVabandust(mall, koguAndmed(sisendid))
+    updateData() // Igaks juhuks
+    generateNewApology()
+    updateMailto()
 })
+
+// TODO: Update mailto link on click
+
+// Genereerime esialgse vabanduse
+generateNewApology()
+updateMailto()

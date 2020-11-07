@@ -1,22 +1,22 @@
 // Abifunktsioon meilile pöördumiste lisamiseks
-const meil = (_, sisu) =>
-    `Lugupeetud ${_.õppejõud},
+const mail = (_, content) =>
+`Lugupeetud ${_.teacher},
 
-    ${sisu}
+${content}
 
-    Siiralt teie,
-    ${_.õpilane}`
+Siiralt teie,
+${_.student}`
 
-const mallid = {
+const templates = {
     lõputöö: [
         
     ],
     eksam: [
         {
-            ülevaade: 'Pean minema hambaarsti juurde',
-            pealkiri: _ => `Eksami aeg (${_.aine})`,
-            meil: _ => meil(_,
-                `Ootamatult on selgunud, et mul on eksamiga samal päeval hambaarstiaeg. Seetõttu palun võimalust teha eksam mõnel teisel ajal. Loodan et saate mulle selles osas vastu tulla.`
+            overview: 'Pean minema hambaarsti juurde',
+            heading: _ => `Eksami aeg (${_.subject})`,
+            mail: _ => mail(_,
+`Ootamatult on selgunud, et mul on eksamiga samal päeval hambaarstiaeg. Seetõttu palun võimalust teha eksam mõnel teisel ajal. Loodan et saate mulle selles osas vastu tulla.`
             )
         }
     ],
@@ -28,11 +28,11 @@ const mallid = {
     ],
     kodutöö: [
         {
-            ülevaade: 'Koer sõi naabri kassi ära',
-            pealkiri: _ => `Kodutöö viivitus (${_.aine})`,
-            meil: _ => meil(_,
-                `Olen sattunud mõnevõrra keerulisse olukorda, kuna eile õhtul sõi mu koer ootamatult naabri kassi ära. Seetõttu pean hetkel tegelema tekkinud segadusega ning ei saa kahjuks kodutööd õigeaegselt esitada.
-                Loodan, et mõistate olukorra tõsidust ning saate tähtaega pikendada.`
+            overview: 'Koer sõi naabri kassi ära',
+            heading: _ => `Kodutöö viivitus (${_.subject})`,
+            mail: _ => mail(_,
+`Olen sattunud mõnevõrra keerulisse olukorda, kuna eile õhtul sõi mu koer ootamatult naabri kassi ära. Seetõttu pean hetkel tegelema tekkinud segadusega ning ei saa kahjuks kodutööd õigeaegselt esitada.
+Loodan, et mõistate olukorra tõsidust ning saate tähtaega pikendada.`
             )
         }
     ]
