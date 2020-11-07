@@ -93,7 +93,7 @@ inputs.student.addEventListener('input', e => { updateData(); updateApology() })
 inputs.address.addEventListener('input', e => { updateData(); updateApology() })
 
 // Seame üles uue apologye valimise ning kuvamise nupule vajutamisel
-document.getElementById('generate-button').addEventListener('click', e => {
+document.getElementById('generate-new-button').addEventListener('click', e => {
     updateData() // Igaks juhuks
     generateNewApology()
     updateMailto()

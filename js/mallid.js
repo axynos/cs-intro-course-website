@@ -34,6 +34,27 @@ const templates = {
 `Olen sattunud mõnevõrra keerulisse olukorda, kuna eile õhtul sõi mu koer ootamatult naabri kassi ära. Seetõttu pean hetkel tegelema tekkinud segadusega ning ei saa kahjuks kodutööd õigeaegselt esitada.
 Loodan, et mõistate olukorra tõsidust ning saate tähtaega pikendada.`
             )
+        },
+        {
+            overview: 'Test 1',
+            heading: _ => `Kodutöö viivitus 1 (${_.subject})`,
+            mail: _ => mail(_,
+`Pahandus ${_.subject} kodutöö ajal.`
+            )
+        },
+        {
+            overview: 'Test 2',
+            heading: _ => `Kodutöö viivitus 3 (${_.subject})`,
+            mail: _ => mail(_,
+`Pahandus ${_.subject} kodutöö ajal.`
+            )
+        },
+        {
+            overview: 'Test 3',
+            heading: _ => `Kodutöö viivitus 3 (${_.subject})`,
+            mail: _ => mail(_,
+`Pahandus ${_.subject} kodutöö ajal.`
+            )
         }
     ]
 }
