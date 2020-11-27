@@ -12,18 +12,53 @@
   <body>
 
     <nav>
-        <div class="logo">
-          <img src="/media/logo-wordmark.svg" alt="Vabanduste Generaator">
-        </div>
+        <a href="/" class="logo">
+          <img src="/media/logo-wordmark.svg" alt="Vabanduste Generaator" draggable="false">
+        </a>
         <ul class="menu-desktop">
-          <li><a href="/">AVALEHT</a></li>
-          <li><a href="/about">MEIST</a></li>
+          <li><a href="/">Avaleht</a></li>
+          <li><a href="/about">Meist</a></li>
+          <li><a href="/send-excuse">Lisa vabandus</a></li>
         </ul>
     </nav>
 
     <main>
-      <form class="form" action="vabandus.html" method="get">
-        
+      <div class="logo">
+        <img src="/media/logo-wordmark-overlay.svg" alt="" draggable="false">
+      </div>
+
+      <form action="/vabandus.html" method="get">
+
+        <h3>Kui oluline antud ülesanne/tegevus on?</h3>
+        <div class="form-radio-select">
+            <input class="form-radio-button" id="severity-0" type="radio"
+                   name="severity" value="0"></input>
+            <label class="form-radio-label" for="severity-0">Lisaülesanne</label>
+
+            <input class="form-radio-button" id="severity-1" type="radio"
+                   name="severity" value="1"></input>
+            <label class="form-radio-label" for="severity-1">Kodutöö</label>
+
+            <input class="form-radio-button" id="severity-2" type="radio"
+                   name="severity" value="2" checked="checked"></input>
+            <label class="form-radio-label" for="severity-2">Kontrolltöö</label>
+
+            <input class="form-radio-button" id="severity-3" type="radio"
+                   name="severity" value="3"></input>
+            <label class="form-radio-label" for="severity-3">Eksam</label>
+
+            <input class="form-radio-button" id="severity-4" type="radio"
+                   name="severity" value="4"></input>
+            <label class="form-radio-label" for="severity-4">Lõputöö</label>
+        </div>
+
+        <div class="container center">
+          <input type="text" name="task" value="" placeholder="Sisesta ülesande/tegevuse nimi">
+        </div>
+
+        <div class="container center">
+          <button type="submit">Vabanda välja</button>
+        </div>
       </form>
     </main>
 
