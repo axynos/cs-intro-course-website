@@ -23,9 +23,6 @@ const templates = {
     kontrolltöö: [
 
     ],
-    kollokvium: [
-        
-    ],
     kodutöö: [
         {
             overview: 'Koer sõi naabri kassi ära',
