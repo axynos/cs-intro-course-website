@@ -40,9 +40,9 @@ function assembleMailto(apology, data) {
 }
 
 // Teisendab andmete objekti url parameetrite sõneks
-function dataToUrlParams(andmed) {
+function dataToUrlParams(data) {
     // TODO: urlencode
-    return `?ser=${andmed.seriousness}&subj=${andmed.subject}&teach=${andmed.teacher}&stud=${andmed.student}&adr=${andmed.address}`
+    return `?ser=${data.seriousness}&subj=${data.subject}&teach=${data.teacher}&stud=${data.student}&adr=${data.address}`
 }
 
 // Teisendab andmed url parameetrite sõnest andmete objektiks

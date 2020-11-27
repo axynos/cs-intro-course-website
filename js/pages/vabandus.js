@@ -32,10 +32,8 @@ function updateData() {
     history.replaceState(data, '', dataToUrlParams(data))
 }
 
-function generateNewApology() {
+function chooseNewApology() {
     template = chooseTemplate(data)
-    updateApology()
-    renderNewApologyAnimation()
 }
 
 function updateApology() {
@@ -69,11 +67,6 @@ function renderMailto(mailto) {
     outputs.mailto.href = mailto
 }
 
-// Kuvab uue vabanduse genereerimise animatsioonid
-function renderNewApologyAnimation() {
-    // TODO
-}
-
 
 // LEHE KÄIVITUMISEL JOOKSEV KOOD
 
@@ -92,15 +85,9 @@ inputs.teacher.addEventListener('input', e => { updateData(); updateApology() })
 inputs.student.addEventListener('input', e => { updateData(); updateApology() })
 inputs.address.addEventListener('input', e => { updateData(); updateApology() })
 
-// Seame üles uue apologye valimise ning kuvamise nupule vajutamisel
-document.getElementById('generate-new-button').addEventListener('click', e => {
-    updateData() // Igaks juhuks
-    generateNewApology()
-    updateMailto()
-})
-
 // TODO: Update mailto link on click
 
-// Genereerime esialgse vabanduse
-generateNewApology()
+// Genereerime vabanduse
+chooseNewApology()
+updateApology()
 updateMailto()
