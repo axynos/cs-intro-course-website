@@ -10,8 +10,21 @@ nav {
   padding-left: 10rem;
   padding-right: 10rem;
 
-  opacity: 0.25;
   transition: opacity 250ms ease-out;
+
+  background-color: white;
+}
+
+nav.dark {
+  background-color: black;
+}
+
+nav a {
+  opacity: 0.25;
+}
+
+nav:hover a {
+  opacity: 1;
 }
 
 nav .logo {
@@ -44,7 +57,7 @@ nav .menu-desktop {
 
   flex-direction: row;
 
-  font-weight: 900;
+  font-weight: 700;
   font-size: 1.05rem;
 
   padding-left: 1rem;
@@ -97,6 +110,7 @@ nav .menu-desktop {
           background-clip: text;
 }
 
-nav:hover {
-  opacity: 1;
+.dark li a,
+.dark li a:visited {
+  color: white
 }
