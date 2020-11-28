@@ -12,8 +12,8 @@
   <body>
 
     <nav>
-        <a href="/" class="logo">
-          <img src="/media/logo-wordmark.svg" alt="Vabanduste Generaator" draggable="false">
+        <a href="#" class="logo">
+          <img src="media/logo-wordmark.svg" alt="Vabanduste Generaator" draggable="false">
         </a>
         <ul class="menu-desktop">
           <li><a href="/">Avaleht</a></li>
@@ -24,36 +24,32 @@
 
     <main>
       <div class="logo">
-        <img src="/media/logo-wordmark-overlay.svg" alt="" draggable="false">
+        <img src="media/logo-wordmark-overlay.svg" alt="" draggable="false">
       </div>
 
-      <form action="/vabandus.html" method="get">
+      <form action="vabandus.html" method="get">
 
         <h3>Kui oluline antud ülesanne/tegevus on?</h3>
         <div class="form-radio-select">
-            <input class="form-radio-button" id="severity-0" type="radio"
-                   name="severity" value="0"></input>
-            <label class="form-radio-label" for="severity-0">Lisaülesanne</label>
+            <input class="form-radio-button" id="seriousness-0" type="radio"
+                   name="seriousness" value="lisaülesanne"></input>
+            <label class="form-radio-label" for="seriousness-0">Lisaülesanne</label>
 
-            <input class="form-radio-button" id="severity-1" type="radio"
-                   name="severity" value="1"></input>
-            <label class="form-radio-label" for="severity-1">Kodutöö</label>
+            <input class="form-radio-button" id="seriousness-1" type="radio"
+                   name="seriousness" value="kodutöö"></input>
+            <label class="form-radio-label" for="seriousness-1">Kodutöö</label>
 
-            <input class="form-radio-button" id="severity-2" type="radio"
-                   name="severity" value="2" checked="checked"></input>
-            <label class="form-radio-label" for="severity-2">Kontrolltöö</label>
+            <input class="form-radio-button" id="seriousness-2" type="radio"
+                   name="seriousness" value="kontrolltöö" checked="checked"></input>
+            <label class="form-radio-label" for="seriousness-2">Kontrolltöö</label>
 
-            <input class="form-radio-button" id="severity-3" type="radio"
-                   name="severity" value="3"></input>
-            <label class="form-radio-label" for="severity-3">Eksam</label>
+            <input class="form-radio-button" id="seriousness-3" type="radio"
+                   name="seriousness" value="eksam"></input>
+            <label class="form-radio-label" for="seriousness-3">Eksam</label>
 
-            <input class="form-radio-button" id="severity-4" type="radio"
-                   name="severity" value="4"></input>
-            <label class="form-radio-label" for="severity-4">Lõputöö</label>
-        </div>
-
-        <div class="container center">
-          <input type="text" name="task" value="" placeholder="Sisesta ülesande/tegevuse nimi">
+            <input class="form-radio-button" id="seriousness-4" type="radio"
+                   name="seriousness" value="lõputöö"></input>
+            <label class="form-radio-label" for="seriousness-4">Lõputöö</label>
         </div>
 
         <div class="container center">
