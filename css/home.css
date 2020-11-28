@@ -1,7 +1,3 @@
-body {
-
-}
-
 .header-container {
   filter: drop-shadow(0px 10px 30px rgba(0,0,0,0.3));
   -webkit-filter: drop-shadow(0px 10px 30px rgba(0,0,0,0.3));
@@ -12,9 +8,10 @@ body {
 
 header {
   padding-top: 10rem;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -37,25 +34,23 @@ header video {
   filter: blur(5px);
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.container {
+  display: grid;
+  grid-template-columns: 0.25fr 0.75fr 0.75fr 0.25fr;
+  grid-template-areas: '. main aside .'
 }
 
-main .logo {
-  display: flex;
-  justify-content: center;
-
-  margin-top: 6rem;
-  margin-bottom: 8rem;
-  height: 6.6rem;
+main {
+  grid-area: main;
 }
 
 main form {
+  grid-area: content;
+
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 main form h3 {
@@ -68,8 +63,13 @@ main form h3 {
 
 main form button {
   margin-top: 3rem;
+  margin-left: 0;
 }
 
 main form input[type=text] {
   margin-top: 1.5rem;
+}
+
+aside {
+  grid-area: aside;
 }
