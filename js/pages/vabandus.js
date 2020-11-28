@@ -27,7 +27,7 @@ function updateData() {
     history.replaceState(data, '', '?' + dataToUrlParams(data))
 }
 
-function chooseNewApology() {
+function updateTemplate() {
     template = chooseTemplate(data)
 }
 
@@ -83,7 +83,12 @@ inputs.student.addEventListener('input', e => { updateData(); updateApology() })
 outputs.mailto.addEventListener('click', e => updateMailto())
 outputs.mailto.addEventListener('contextmenu', e => updateMailto())
 
+// Kui tegemist on lõputööga, paneme aine asemel teema
+if (data.seriousness === 'lõputöö') {
+    inputs.subject.placeholder = "TEEMA"
+}
+
 // Genereerime vabanduse
-chooseNewApology()
+updateTemplate()
 updateApology()
 updateMailto()

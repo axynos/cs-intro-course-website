@@ -7,9 +7,23 @@ Olen ${_.student}, teie aines õppiv tudeng. ${content}
 Siiralt teie,
 ${_.student || ' '}`
 
+const mailLõputöö = (_, content) =>
+`Lugupeetud ${_.teacher},
+
+Kirjutan teile oma lõputöö, ${_.subject}, osas. ${content}
+
+Siiralt teie,
+${_.student || ' '}`
+
 const templates = {
     lõputöö: [
-        
+        {
+            overview: 'Pean minema hambaarsti juurde',
+            heading: _ => `Eksami aeg (${_.subject})`,
+            mail: _ => mailLõputöö(_,
+`Ootamatult on selgunud, et ma ei oska oma aega planeerida, ning sellest tulenevalt ei saa minu lõputöö (${_.subject}) planeeritud ajaks valmis. Loodan saada lõputöö valmis pärast tähtaega. Loodan et suhtute mõistvalt, ning võimaldate mulle pisut lisaaega.`
+            )
+        }
     ],
     eksam: [
         {
@@ -21,7 +35,13 @@ const templates = {
         }
     ],
     kontrolltöö: [
-
+        {
+            overview: 'Pean minema hambaarsti juurde',
+            heading: _ => `Eksami aeg (${_.subject})`,
+            mail: _ => mail(_,
+`Ootamatult on selgunud, et mul on kontrolltööga samal päeval hambaarstiaeg. Seetõttu palun võimalust teha kontrolltöö mõnel teisel ajal. Loodan et saate mulle selles osas vastu tulla.`
+            )
+        }
     ],
     kodutöö: [
         {
@@ -65,13 +85,6 @@ Loodan, et mõistate olukorra tõsidust ning saate tähtaega pikendada.`
             heading: _ => `Viivitus kodutöö esitamisel (${_.subject})`,
             mail: _ => mail(_,
 `Mul kahjuks ei olnud võimalik kodutööd ära teha, sest rott sõi minu arvutihiire ära. Loodan, suhtute mõistvalt ning olete tähtaja suhtes paindlik.`
-            )
-        }, 
-        {
-            overview: '',
-            heading: _ => ` (${_.subject})`,
-            mail: _ => mail(_,
-`TODO`
             )
         }
     ]
