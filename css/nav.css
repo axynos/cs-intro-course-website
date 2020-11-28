@@ -55,6 +55,7 @@ nav .menu-desktop {
 
 .menu-desktop li {
   display: block;
+  text-transform: uppercase;
 }
 
 .menu-desktop li:not(:last-of-type) {

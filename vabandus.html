@@ -28,21 +28,30 @@
       </header>
 
       <div class="inputs">
-        <input type="text" name="subject" placeholder="AINE">
-        <input type="text" name="teacher" placeholder="ÕPPEJÕUD">
-        <input type="text" name="student" placeholder="SINU NIMI">
+        <input class="block" type="text" name="student" placeholder="NIMI">
+        <input class="block" type="text" name="subject" placeholder="AINE">
+        <input class="block" type="text" name="teacher" placeholder="ÕPPEJÕUD">
       </div>
 
       <div class="email">
         <div class="email-preview">
-          <p>Tere!</p>
-          <p>Olen __________, Teie õppeaines õppiv tudeng. Mul kahjuks ei olnud võimalik kontrolltööd ära teha, sest rott sõi minu arvutihiire ära.</p>
-          <p>Kõike head</p>
-          <p>__________</p>
+          <div class="email-header">
+            <label for="">PEALKIRI </label>
+            <input class="inline" type="text" name="email-subject">
+            <label for="">E-POST </label>
+            <input class="inline" type="text" name="email-address">
+          </div>
+
+          <div class="email-content">
+            <p>Tere!</p>
+            <p>Olen __________, Teie õppeaines õppiv tudeng. Mul kahjuks ei olnud võimalik kontrolltööd ära teha, sest rott sõi minu arvutihiire ära.</p>
+            <p>Kõike head</p>
+            <p>__________</p>
+          </div>
         </div>
 
         <div class="">
-          <a class="button">Saada õppejõule</a>
+          <a class="button" href="mailto:silverkruus@gmail.com" target="_top">Saada õppejõule</a>
         </div>
       </div>
     </main>

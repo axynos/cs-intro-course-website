@@ -40,14 +40,31 @@ main .email {
 }
 
 .email-preview {
+  display: flex;
+  flex-direction: column;
+
   max-width: 30rem;
-  text-transform: uppercase;
+  text-transform: none;
   font-weight: 700;
 
   border: 3px solid black;
-  padding: 1rem 2rem;
 }
 
-main button {
+main a.button {
   margin-top: 3rem;
+}
+
+.email-preview .email-header {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+
+  grid-row-gap: 0.75rem;
+
+  padding: 1.5rem 2rem;
+  border-bottom: 3px solid black;
+}
+
+.email-preview .email-content {
+  padding: 1.5rem 2rem;
 }
