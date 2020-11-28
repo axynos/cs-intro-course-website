@@ -13,7 +13,7 @@ form input[type=radio] {
 }
 
 form .form-radio-label {
-  padding: 0.5rem 1.75rem;
+  padding: 0.5rem 1rem;
   background-color: #f4f4f4;
 
   color: black;
@@ -36,12 +36,18 @@ form .form-radio-label {
 
 .form-radio-label:first-of-type {
   border-left: none;
-  
+
 }
 
 .form-radio-label:last-of-type {
   border-top-right-radius: 10rem;
   border-bottom-right-radius: 10rem;
+}
+
+.form-radio-label:first-of-type {
+  border-top-left-radius: 10rem;
+  border-bottom-left-radius: 10rem;
+  border-left: none;
 }
 
 input[type=radio]:checked+label {
@@ -85,7 +91,7 @@ button:active, a.button:active {
     transform: scale(0.99);
 }
 
-.container.center {
+.button-container.center {
   display: flex;
   justify-content: center;
 }
