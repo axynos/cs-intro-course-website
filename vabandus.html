@@ -24,17 +24,17 @@
 
     <main>
       <header>
-        <h1>Vabandust! Mul kahjuks ei olnud võimalik kontrolltööd ära teha, sest rott sõi mu arvutihiire ära.</h1>
+        <h1 id="overview">Vabandust! Mul kahjuks ei olnud võimalik kontrolltööd ära teha, sest rott sõi mu arvutihiire ära.</h1>
       </header>
 
       <div class="inputs">
-        <input type="text" name="subject" placeholder="AINE">
-        <input type="text" name="teacher" placeholder="ÕPPEJÕUD">
-        <input type="text" name="student" placeholder="SINU NIMI">
+        <input id="subject-input" type="text" name="subject" placeholder="AINE">
+        <input id="teacher-input" type="text" name="teacher" placeholder="ÕPPEJÕUD">
+        <input id="student-input" type="text" name="student" placeholder="SINU NIMI">
       </div>
 
       <div class="email">
-        <div class="email-preview">
+        <div id="email-preview" class="email-preview">
           <p>Tere!</p>
           <p>Olen __________, Teie õppeaines õppiv tudeng. Mul kahjuks ei olnud võimalik kontrolltööd ära teha, sest rott sõi minu arvutihiire ära.</p>
           <p>Kõike head</p>
@@ -46,5 +46,9 @@
         </div>
       </div>
     </main>
+
+    <script src="js/templates.js"></script>
+    <script src="js/generator.js"></script>
+    <script src="js/pages/vabandus.js"></script>
   </body>
 </html>

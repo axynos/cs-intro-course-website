@@ -46,6 +46,8 @@ main .email {
 
   border: 3px solid black;
   padding: 1rem 2rem;
+
+  white-space: pre-wrap;
 }
 
 main button {
