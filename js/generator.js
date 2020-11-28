@@ -36,23 +36,23 @@ function assembleApology(template, data) {
 }
 
 function assembleMailto(apology, data) {
-    return `mailto:${data.address}?subject=${encodeURIComponent(apology.heading)}&body=${encodeURIComponent(apology.mail)}`
+    return `mailto:${data.address.trim() || 'õppejõu.nimi@ut.ee'}?subject=${encodeURIComponent(apology.heading)}&body=${encodeURIComponent(apology.mail)}`
 }
 
 // Teisendab andmete objekti url parameetrite sõneks
-function dataToUrlParams(andmed) {
-    // TODO: urlencode
-    return `?ser=${andmed.seriousness}&subj=${andmed.subject}&teach=${andmed.teacher}&stud=${andmed.student}&adr=${andmed.address}`
+function dataToUrlParams(data) {
+    return new URLSearchParams(data).toString()
+    //return `?seriousness=${data.seriousness}&subject=${encodeURIComponent(data.subject)}&teacher=${encodeURIComponent(data.teacher)}&student=${encodeURIComponent(data.student)}` //&address=${data.address}`
 }
 
 // Teisendab andmed url parameetrite sõnest andmete objektiks
 function urlParamsToData(urlParameetrid) {
-    const urlParameetridObjekt = new URLSearchParams(urlParameetrid) 
+    const urlParams = new URLSearchParams(urlParameetrid) 
     return {
-        seriousness: urlParameetridObjekt.get('ser') || '',
-        subject: urlParameetridObjekt.get('subj') || '',
-        teacher: urlParameetridObjekt.get('teach') || '',
-        student: urlParameetridObjekt.get('stud') || '',
-        address: urlParameetridObjekt.get('adr') || ''
+        seriousness: urlParams.get('seriousness') || '',
+        subject: urlParams.get('subject') || '',
+        teacher: urlParams.get('teacher') || '',
+        student: urlParams.get('student') || '',
+        address: urlParams.get('address') || ''
     }
 }

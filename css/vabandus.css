@@ -48,6 +48,8 @@ main .email {
   font-weight: 700;
 
   border: 3px solid black;
+
+  white-space: pre-wrap;
 }
 
 main a.button {

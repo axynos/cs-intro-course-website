@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Vabandust! — Vabanduste Generaator</title>
+    <title>Vabandust!</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/global.css">
@@ -17,32 +17,32 @@
         </a>
         <ul class="menu-desktop">
           <li><a href="/">Avaleht</a></li>
-          <li><a href="meist.html">Meist</a></li>
-          <li><a href="send-excuse.html">Lisa vabandus</a></li>
+          <li><a href="/about">Meist</a></li>
+          <li><a href="/send-excuse">Lisa vabandus</a></li>
         </ul>
     </nav>
 
     <main>
       <header>
-        <h1>Vabandust! Mul kahjuks ei olnud võimalik kontrolltööd ära teha, sest rott sõi mu arvutihiire ära.</h1>
+        <h1 id="overview">Vabandust! Mul kahjuks ei olnud võimalik kontrolltööd ära teha, sest rott sõi mu arvutihiire ära.</h1>
       </header>
 
       <div class="inputs">
-        <input class="block" type="text" name="student" placeholder="NIMI">
-        <input class="block" type="text" name="subject" placeholder="AINE">
-        <input class="block" type="text" name="teacher" placeholder="ÕPPEJÕUD">
+        <input id="student-input" class="block" type="text" name="student" placeholder="NIMI">
+        <input id="subject-input" class="block" type="text" name="subject" placeholder="AINE">
+        <input id="teacher-input" class="block" type="text" name="teacher" placeholder="ÕPPEJÕUD">
       </div>
 
       <div class="email">
         <div class="email-preview">
           <div class="email-header">
             <label for="">PEALKIRI </label>
-            <p>Probleem kodutööga (LTAT.001.003)</p>
+            <input id="heading-preview" class="inline" type="text" name="email-subject">
             <label for="">E-POST </label>
-            <input class="inline" type="text" name="email-address">
+            <input id="address-input" class="inline" type="text" name="email-address">
           </div>
 
-          <div class="email-content">
+          <div id="email-preview" class="email-content">
             <p>Tere!</p>
             <p>Olen __________, Teie õppeaines õppiv tudeng. Mul kahjuks ei olnud võimalik kontrolltööd ära teha, sest rott sõi minu arvutihiire ära.</p>
             <p>Kõike head</p>
@@ -51,9 +51,13 @@
         </div>
 
         <div class="">
-          <a class="button" href="mailto:silverkruus@gmail.com" target="_top">Saada õppejõule</a>
+          <a id="mailto-link" class="button" target="_blank">Saada õppejõule</a>
         </div>
       </div>
     </main>
+
+    <script src="js/templates.js"></script>
+    <script src="js/generator.js"></script>
+    <script src="js/pages/vabandus.js"></script>
   </body>
 </html>

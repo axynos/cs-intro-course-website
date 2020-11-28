@@ -2,40 +2,33 @@
 
 // Hangime sisendite HTML elemendid
 const inputs = {
-    seriousness: document.getElementById('seriousness-input'),
+    //seriousness: document.getElementById('seriousness-input'),
     subject: document.getElementById('subject-input'),
     teacher: document.getElementById('teacher-input'),
     student: document.getElementById('student-input'),
     address: document.getElementById('address-input')
 }
 
-// Kogub sisenditest andmed
-function collectData() {
-    return {
-        seriousness: inputs.seriousness.value,
-        subject: inputs.subject.value,
-        teacher: inputs.teacher.value,
-        student: inputs.student.value,
-        address: inputs.address.value
-    }
-}
-
 // FUNKTSIOONID VABANDUSTE UUENDAMISEKS JA KUVAMISEKS
 
-let data = null
+let data = {}
 let template = null
 let apology = null
 
 function updateData() {
-    data = collectData()
+    // Hangime sisenditest uued andmed
+    //data.seriousness = inputs.seriousness.value
+    data.subject = inputs.subject.value
+    data.teacher = inputs.teacher.value
+    data.student = inputs.student.value
+    data.address = inputs.address.value
+
     // Uuendame url-is parameetreid (https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState)
-    history.replaceState(data, '', dataToUrlParams(data))
+    history.replaceState(data, '', '?' + dataToUrlParams(data))
 }
 
-function generateNewApology() {
+function updateTemplate() {
     template = chooseTemplate(data)
-    updateApology()
-    renderNewApologyAnimation()
 }
 
 function updateApology() {
@@ -53,7 +46,7 @@ function updateMailto() {
 const outputs = {
     overview: document.getElementById("overview"),
     heading: document.getElementById("heading-preview"),
-    mail: document.getElementById("mail-preview"),
+    mail: document.getElementById("email-preview"),
     mailto: document.getElementById("mailto-link")
 }
 
@@ -69,11 +62,6 @@ function renderMailto(mailto) {
     outputs.mailto.href = mailto
 }
 
-// Kuvab uue vabanduse genereerimise animatsioonid
-function renderNewApologyAnimation() {
-    // TODO
-}
-
 
 // LEHE KÄIVITUMISEL JOOKSEV KOOD
 
@@ -81,26 +69,26 @@ function renderNewApologyAnimation() {
 data = urlParamsToData(window.location.search)
 
 // Määrame sisendite algsed väärtused ning seame üles reageerimise muutustele
-inputs.seriousness.value = data.seriousness
+//inputs.seriousness.value = data.seriousness
 inputs.subject.value = data.subject
 inputs.teacher.value = data.teacher
 inputs.student.value = data.student
-inputs.address.value = data.address
+//inputs.address.value = data.address
 
 inputs.subject.addEventListener('input', e => { updateData(); updateApology() })
 inputs.teacher.addEventListener('input', e => { updateData(); updateApology() })
 inputs.student.addEventListener('input', e => { updateData(); updateApology() })
-inputs.address.addEventListener('input', e => { updateData(); updateApology() })
+//inputs.address.addEventListener('input', e => { updateData(); updateApology() })
 
-// Seame üles uue apologye valimise ning kuvamise nupule vajutamisel
-document.getElementById('generate-new-button').addEventListener('click', e => {
-    updateData() // Igaks juhuks
-    generateNewApology()
-    updateMailto()
-})
+outputs.mailto.addEventListener('click', e => updateMailto())
+outputs.mailto.addEventListener('contextmenu', e => updateMailto())
 
-// TODO: Update mailto link on click
+// Kui tegemist on lõputööga, paneme aine asemel teema
+if (data.seriousness === 'lõputöö') {
+    inputs.subject.placeholder = "TEEMA"
+}
 
-// Genereerime esialgse vabanduse
-generateNewApology()
+// Genereerime vabanduse
+updateTemplate()
+updateApology()
 updateMailto()
