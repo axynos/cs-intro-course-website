@@ -2,10 +2,10 @@
 const mail = (_, content) =>
 `Lugupeetud ${_.teacher},
 
-${content}
+Olen ${_.student}, teie aines õppiv tudeng. ${content}
 
 Siiralt teie,
-${_.student}`
+${_.student || ' '}`
 
 const templates = {
     lõputöö: [
@@ -61,10 +61,10 @@ Loodan, et mõistate olukorra tõsidust ning saate tähtaega pikendada.`
             )
         },
         {
-            overview: '',
-            heading: _ => ` (${_.subject})`,
+            overview: 'Rott sõi arvutihiire ära',
+            heading: _ => `Viivitus kodutöö esitamisel (${_.subject})`,
             mail: _ => mail(_,
-`TODO`
+`Mul kahjuks ei olnud võimalik kodutööd ära teha, sest rott sõi minu arvutihiire ära. Loodan, suhtute mõistvalt ning olete tähtaja suhtes paindlik.`
             )
         }, 
         {
