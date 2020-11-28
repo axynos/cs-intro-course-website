@@ -1,6 +1,5 @@
 // Hangime ankeedi sisendid
 const excuseForm = document.getElementById('excuse-form')
-const inputs = excuseForm.querySelectorAll('input') 
 
 // Funktsioon millega saadetakse ankeedi sisu google formsi
 // Loodud https://edcupaioli.com/blog/google-form-front-end/ põhjal
@@ -9,13 +8,16 @@ function submitForm() {
     // entry.1834590686 - tõsidus
     // entry.1840013867 - vabandus
     // entry.2126048838 - meilinäidis
-    fetch(`${formsURL}?${inputs.map(i => `${i.name}=${i.value}`).join('&')}`, {mode: 'no-cors'})
+    const formURLParams = new URLSearchParams(new FormData(excuseForm))
+    fetch(`${formsURL}?${formURLParams.toString()}`, {mode: 'no-cors'})
         .then(
             () => {
                 // Saatmine edukas (kui andmed on vigased siis ei pruugi vastus formsis kajastuda, isegi kui saatmine oli meie vaates edukas)
+                window.location.href = 'vabandus-saadetud'
             },
             () => {
-                // Saatmine kukkus läbi
+                // Saatmine kukkus läbi. See peaks juhtuma ainult siis kui internetiga on mingi jama
+                alert('Midagi läks saatmisel valest! Kontrolli oma internetiühendust!')
             }
         )
 }

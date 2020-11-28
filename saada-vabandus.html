@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/ui.css">
-    <link rel="stylesheet" href="css/lisa-vabandus.css">
+    <link rel="stylesheet" href="css/saada-vabandus.css">
   </head>
   <body>
 
@@ -19,33 +19,33 @@
         <ul class="menu-desktop">
           <li><a href="/">Avaleht</a></li>
           <li><a href="/meist">Meist</a></li>
-          <li><a href="/lisa-vabandus">Lisa vabandus</a></li>
+          <li><a href="/saada-vabandus">Jaga vabandust</a></li>
         </ul>
     </nav>
 
     <main>
-      <form action="vabandus" method="get" autocomplete="off">
+      <form id="excuse-form" action="" method="get" autocomplete="off">
 
-        <h3>Millise olukorra jaoks vabandus sobib?</h3>
+        <h3>Tead mõnda head vabandust ja tahad seda teistega jagada? Saada meile oma vabandus!</h3>
         <div class="form-radio-select">
             <input class="form-radio-button" id="seriousness-0" type="radio"
-                   name="seriousness" value="lisaülesanne"></input>
+                   name="entry.1834590686" value="lisaülesanne"></input>
             <label class="form-radio-label" for="seriousness-0">Lisaülesanne</label>
 
             <input class="form-radio-button" id="seriousness-1" type="radio"
-                   name="seriousness" value="kodutöö"></input>
+                   name="entry.1834590686" value="kodutöö"></input>
             <label class="form-radio-label" for="seriousness-1">Kodutöö</label>
 
             <input class="form-radio-button" id="seriousness-2" type="radio"
-                   name="seriousness" value="kontrolltöö" checked="checked"></input>
+                   name="entry.1834590686" value="kontrolltöö" checked="checked"></input>
             <label class="form-radio-label" for="seriousness-2">Kontrolltöö</label>
 
             <input class="form-radio-button" id="seriousness-3" type="radio"
-                   name="seriousness" value="eksam"></input>
+                   name="entry.1834590686" value="eksam"></input>
             <label class="form-radio-label" for="seriousness-3">Eksam</label>
 
             <input class="form-radio-button" id="seriousness-4" type="radio"
-                   name="seriousness" value="lõputöö"></input>
+                   name="entry.1834590686" value="lõputöö"></input>
             <label class="form-radio-label" for="seriousness-4">Lõputöö</label>
         </div>
         
@@ -53,21 +53,19 @@
           <div class="email-preview">
             <div class="email-header">
               <label for="">VABANDUS </label>
-              <input class="inline" type="text" name="email-subject" placeholder="">
+              <input class="inline" type="text" name="entry.1840013867" required placeholder="">
             </div>
   
-            <textarea class="email-content" placeholder=""></textarea>
+            <textarea class="email-content" name="entry.2126048838" required placeholder="Tere!&#10;See on minu vabanduse meilinäidis..."></textarea>
           </div>
         </div>
 
         <div class="container center">
-          <button type="submit">Soovita vabandus</button>
+          <button type="submit">Saada vabandus</button>
         </div>
       </form>
     </main>
 
-    <script src="js/templates.js"></script>
-    <script src="js/generator.js"></script>
-    <script src="js/pages/vabandus.js"></script>
+    <script src="js/pages/saada-vabandus.js"></script>
   </body>
 </html>
