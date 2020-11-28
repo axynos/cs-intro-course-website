@@ -17,7 +17,7 @@ function submitForm() {
             },
             () => {
                 // Saatmine kukkus läbi. See peaks juhtuma ainult siis kui internetiga on mingi jama
-                alert('Midagi läks saatmisel valest! Kontrolli oma internetiühendust!')
+                alert('Vabandame, midagi läks valesti! Kontrollige oma internetiühendust!')
             }
         )
 }
