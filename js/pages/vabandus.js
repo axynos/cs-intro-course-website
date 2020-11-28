@@ -6,7 +6,7 @@ const inputs = {
     subject: document.getElementById('subject-input'),
     teacher: document.getElementById('teacher-input'),
     student: document.getElementById('student-input'),
-    //address: document.getElementById('address-input')
+    address: document.getElementById('address-input')
 }
 
 // FUNKTSIOONID VABANDUSTE UUENDAMISEKS JA KUVAMISEKS
@@ -21,7 +21,7 @@ function updateData() {
     data.subject = inputs.subject.value
     data.teacher = inputs.teacher.value
     data.student = inputs.student.value
-    //data.address: inputs.address.value
+    data.address = inputs.address.value
 
     // Uuendame url-is parameetreid (https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState)
     history.replaceState(data, '', '?' + dataToUrlParams(data))
@@ -45,7 +45,7 @@ function updateMailto() {
 
 const outputs = {
     overview: document.getElementById("overview"),
-    //heading: document.getElementById("heading-preview"),
+    heading: document.getElementById("heading-preview"),
     mail: document.getElementById("email-preview"),
     mailto: document.getElementById("mailto-link")
 }
@@ -53,7 +53,7 @@ const outputs = {
 // Kuvab koostatud vabanduse lehel
 function renderApology(apology) {
     outputs.overview.textContent = apology.overview
-    //outputs.heading.textContent = apology.heading
+    outputs.heading.textContent = apology.heading
     outputs.mail.textContent = apology.mail
 }
 

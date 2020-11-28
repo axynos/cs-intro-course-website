@@ -36,7 +36,7 @@ function assembleApology(template, data) {
 }
 
 function assembleMailto(apology, data) {
-    return `mailto:õppejõu.nimi@ut.ee?subject=${encodeURIComponent(apology.heading)}&body=${encodeURIComponent(apology.mail)}`
+    return `mailto:${data.address.trim() || 'õppejõu.nimi@ut.ee'}?subject=${encodeURIComponent(apology.heading)}&body=${encodeURIComponent(apology.mail)}`
 }
 
 // Teisendab andmete objekti url parameetrite sõneks
@@ -53,6 +53,6 @@ function urlParamsToData(urlParameetrid) {
         subject: urlParams.get('subject') || '',
         teacher: urlParams.get('teacher') || '',
         student: urlParams.get('student') || '',
-        //address: urlParams.get('address') || ''
+        address: urlParams.get('address') || ''
     }
 }
