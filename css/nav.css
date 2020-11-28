@@ -9,6 +9,9 @@ nav {
 
   padding-left: 10rem;
   padding-right: 10rem;
+
+  opacity: 0.25;
+  transition: opacity 250ms ease-out;
 }
 
 nav .logo {
@@ -91,4 +94,8 @@ nav .menu-desktop {
 
   -webkit-background-clip: text;
           background-clip: text;
+}
+
+nav:hover {
+  opacity: 1;
 }
