@@ -15,6 +15,11 @@ header h1 {
   max-width: 65rem;
 }
 
+header h1 span {
+  color: #007CF0;
+  padding-right: 0.5rem;
+}
+
 main .inputs {
   grid-area: content;
   display: flex;
@@ -65,6 +70,19 @@ main a.button {
 
   padding: 1.5rem 2rem;
   border-bottom: 3px solid black;
+}
+
+.email-header p {
+  margin-top: 0;
+
+  border-bottom: 2px solid black;
+  font-weight: 700;
+
+  padding-bottom: 0.15rem;
+}
+
+.email-header input[type=text].inline {
+  width: 100%;
 }
 
 .email-preview .email-content {
