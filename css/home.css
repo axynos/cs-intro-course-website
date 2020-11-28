@@ -46,6 +46,10 @@ main form button {
   margin-top: 3rem;
 }
 
+main form input[type=text] {
+  margin-top: 1.5rem;
+}
+
 /* Animatsiooni loomiseks kasutasime lehte gradient-animator.com */
 @-webkit-keyframes logo-animation {
     0%{background-position:0% 50%}

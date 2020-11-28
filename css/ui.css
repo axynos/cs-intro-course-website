@@ -58,7 +58,6 @@ button, a.button {
     color: #ffffff;
     font-weight: 700;
     text-transform: uppercase;
-    font-family: sans-serif;
     font-size: 1rem;
     cursor: pointer;
     text-align: center;
@@ -85,11 +84,7 @@ button:active, a.button:active {
   justify-content: center;
 }
 
-main form input[type=text] {
-  margin-top: 1.5rem;
-}
-
-input[type=text] {
+input[type=text].block {
   display: inline-block;
   padding: 0.75rem 2rem;
 
@@ -108,4 +103,13 @@ input[type=text] {
 
 input[type=text]:focus {
   outline: none;
+}
+
+input[type=text].inline {
+  border: none;
+  border-bottom: 2px solid black;
+  font-weight: 700;
+  width: 15rem;
+
+  padding-bottom: 0.15rem;
 }
