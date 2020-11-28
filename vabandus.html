@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Vabandust!</title>
+    <title>Vabandust! — Vabanduste Generaator</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/global.css">
@@ -17,14 +17,14 @@
         </a>
         <ul class="menu-desktop">
           <li><a href="/">Avaleht</a></li>
-          <li><a href="/about">Meist</a></li>
-          <li><a href="/send-excuse">Lisa vabandus</a></li>
+          <li><a href="meist.html">Meist</a></li>
+          <li><a href="send-excuse.html">Lisa vabandus</a></li>
         </ul>
     </nav>
 
     <main>
       <header>
-        <h1 id="overview">Vabandust! Mul kahjuks ei olnud võimalik kontrolltööd ära teha, sest rott sõi mu arvutihiire ära.</h1>
+        <h1><span>Vabandust!</span></h1><h1 id="overview">Mul kahjuks ei olnud võimalik kontrolltööd ära teha, sest rott sõi mu arvutihiire ära.</h1>
       </header>
 
       <div class="inputs">
@@ -36,9 +36,9 @@
       <div class="email">
         <div class="email-preview">
           <div class="email-header">
-            <label for="">PEALKIRI </label>
-            <input id="heading-preview" class="inline" type="text" name="email-subject">
-            <label for="">E-POST </label>
+            <label>PEALKIRI</label>
+            <p id="heading-preview" class="inline" type="text" name="email-subject"></p>
+            <label>E-POST</label>
             <input id="address-input" class="inline" type="text" name="email-address">
           </div>
 

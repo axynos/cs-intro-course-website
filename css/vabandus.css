@@ -15,6 +15,11 @@ header h1 {
   max-width: 65rem;
 }
 
+header h1 span {
+  color: #007CF0;
+  padding-right: 0.5rem;
+}
+
 main .inputs {
   grid-area: content;
   display: flex;
