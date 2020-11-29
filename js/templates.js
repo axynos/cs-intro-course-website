@@ -10,18 +10,19 @@ ${_.student || ' '}`
 const mailLõputöö = (_, content) =>
 `Lugupeetud ${_.teacher},
 
-Kirjutan teile oma lõputöö, ${_.subject}, osas. ${content}
+Kirjutan teile oma lõputöö "${_.subject}" osas. ${content}
 
 Siiralt teie,
 ${_.student || ' '}`
 
+// Mallid vabanduste jaoks
 const templates = {
     lõputöö: [
         {
             overview: 'Pean minema hambaarsti juurde',
             heading: _ => `Eksami aeg (${_.subject})`,
             mail: _ => mailLõputöö(_,
-`Ootamatult on selgunud, et ma ei oska oma aega planeerida, ning sellest tulenevalt ei saa minu lõputöö (${_.subject}) planeeritud ajaks valmis. Loodan saada lõputöö valmis pärast tähtaega. Loodan et suhtute mõistvalt, ning võimaldate mulle pisut lisaaega.`
+`Ootamatult on selgunud, et ma ei oska oma aega planeerida, ning sellest tulenevalt ei saa minu lõputöö planeeritud ajaks valmis. Loodan saada lõputöö valmis pärast tähtaega. Loodan et suhtute mõistvalt, ning võimaldate mulle pisut lisaaega.`
             )
         }
     ],
