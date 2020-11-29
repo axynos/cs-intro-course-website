@@ -7,16 +7,27 @@
 }
 
 header {
-  padding-top: 10rem;
   margin-bottom: 4rem;
+
+  padding-top: 12rem;
+  padding-bottom: 17rem;
+  padding-left: 30rem;
+  padding-right: 30rem;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+
+  clip-path: ellipse(125% 90% at 50% 0%);
+  background-color: black;
+}
+
+header .video-container {
+  grid-column: 2;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-
-  clip-path: ellipse(125% 90% at 50% 0%);
-  background-color: black;
+  align-items: flex-end;
 }
 
 /* Peida logo SVG lehelt. */
@@ -27,32 +38,33 @@ header svg {
 }
 
 header video {
-  width: 50rem;
+  width: 100%;
   height: auto;
   clip-path: url(#logo-clip);
 
   filter: blur(5px);
 }
 
-.container {
-  display: grid;
-  grid-template-columns: 0.25fr 1fr 0.5fr 0.25fr;
-  grid-template-areas: '. main aside .';
-  grid-column-gap: 2rem;
-
-  margin-bottom: 10rem;
-}
-
 main {
   grid-area: main;
 }
 
-main p {
-  color: #999999;
-  margin-bottom: 3rem;
+header .content {
+  grid-column: 1;
 }
 
-main form {
+header .content h1 {
+  color: white;
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
+}
+
+header .content p {
+  color: #e8e8e8;
+  margin-bottom: 6.5rem;
+}
+
+header .content form {
   grid-area: content;
 
   display: flex;
@@ -60,16 +72,12 @@ main form {
   justify-content: flex-start;
   align-items: flex-start;
 
-  margin-bottom: 2.5rem;
+  margin-bottom: 5rem;
 }
 
-main form button {
-  margin-top: 3rem;
+header .content form button {
+  margin-top: 8rem;
   margin-left: 0;
-}
-
-main form input[type=text] {
-  margin-top: 1.5rem;
 }
 
 aside {

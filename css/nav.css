@@ -4,11 +4,7 @@ nav {
   grid-template-rows: auto;
   grid-template-areas: 'logo menu-desktop';
 
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-
-  padding-left: 10rem;
-  padding-right: 10rem;
+  padding: 1.5rem 30rem;
 
   transition: opacity 250ms ease-out;
 
@@ -37,7 +33,6 @@ nav .logo {
   height: 100%;
   width: 100%;
 
-  padding-left: 1rem;
   padding-right: 1rem;
 }
 
@@ -61,7 +56,6 @@ nav .menu-desktop {
   font-size: 1.05rem;
 
   padding-left: 1rem;
-  padding-right: 1rem;
 
   margin: 0;
 }
