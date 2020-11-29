@@ -156,7 +156,7 @@ section.why ul li {
 
 section.why a.button {
   margin-top: 2rem;
-  margin-left: 0;
+  margin-left: -2rem;
 }
 
 section.testimonial {
@@ -191,7 +191,7 @@ section.testimonial aside {
 
 section.testimonial a.button {
   margin-top: 3rem;
-  margin-left: 0;
+  margin-left: -2rem;
 }
 
 section.newsletter {
