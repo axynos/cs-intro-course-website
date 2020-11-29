@@ -22,8 +22,9 @@ form .form-radio-label {
 
   user-select: none;
 
-  transition: background-color 150ms ease-out;
-  transition: border 150ms ease-out;
+  transition: background-color 150ms ease-out,
+              color 150ms ease-out,
+              border 150ms ease-out;
 }
 
 .form-radio-label:hover {
@@ -57,7 +58,10 @@ button, a.button {
     align-items: center;
     border: none;
     border-radius: 50rem;
-    padding: 0.75rem 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.65rem;
     margin: 1rem 2rem;
     text-decoration: none;
     background: black;
@@ -67,11 +71,19 @@ button, a.button {
     font-size: 1rem;
     cursor: pointer;
     text-align: center;
-    transition: background 150ms ease-in-out,
-                color 150ms ease-in-out,
+    line-height: 0.8rem;
+    transition: background 150ms ease-out,
+                color 150ms ease-out,
+                border 150ms ease-out,
                 transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
+}
+
+button span, a.button span {
+  margin-left: 0.75rem;
+  margin-top: -0.2rem;
+  font-size: 1.25rem;
 }
 
 button.light, a.button.light {
@@ -79,13 +91,36 @@ button.light, a.button.light {
   color: black;
 }
 
-button span, a.button span {
-  margin-left: 0.75rem;
-  margin-top: -0.2rem;
+button.ghost, a.button.ghost {
+  background: unset;
+  color:black;
+  border: 3px solid black;
+}
+
+button.inline, a.button.inline {
+  border: unset;
+  background: unset;
+  color: black;
+}
+
+button.ghost.light, a.button.ghost.light {
+  border: 3px solid white;
 }
 
 button:hover, a.button:hover {
   background-color: #008CF0;
+}
+
+button.ghost:hover, a.button.ghost:hover {
+  background-color: unset;
+  border: 3px solid #008CF0;
+  color: #008CF0;
+}
+
+button.inline:hover, a.button.inline:hover {
+  background-color: unset;
+  border: unset;
+  color: #008CF0;
 }
 
 button:focus, a.button:focus {
@@ -104,6 +139,14 @@ button:active, a.button:active {
 .button-container.center {
   display: flex;
   justify-content: center;
+}
+
+input[type=text] {
+  font-size: 0.9rem;
+}
+
+input[type=text]::placeholder {
+  font-size: 0.8rem;
 }
 
 input[type=text].block {
@@ -133,5 +176,17 @@ input[type=text].inline {
   font-weight: 700;
   width: 15rem;
 
-  padding-bottom: 0.15rem;
+  padding-bottom: 0.5rem;
+}
+
+span.kicker {
+  display: block;
+  margin-bottom: 0;
+  margin-top: 0;
+
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: #007CF0;
+
+  font-weight: 500;
 }

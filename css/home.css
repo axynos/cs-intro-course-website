@@ -41,8 +41,6 @@ header video {
   width: 100%;
   height: auto;
   clip-path: url(#logo-clip);
-
-  filter: blur(5px);
 }
 
 main {
@@ -57,6 +55,7 @@ header .content h1 {
   color: white;
   margin-top: 0rem;
   margin-bottom: 1.5rem;
+  text-transform: uppercase;
 }
 
 header .content p {
@@ -80,13 +79,210 @@ header .content form button {
   margin-left: 0;
 }
 
-aside {
+section.usage .images {
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+section.usage .images img {
+  display: block;
+  border-radius: 100%;
+  height: 4rem;
+  width: 4rem;
+  background-color: #f4f4f4;
+
+  margin-left: 4rem;
+  user-select: none;
+}
+
+section.usage .images img:first-of-type {
+  margin-left: 0rem;
+}
+
+section.usage h2 {
+  text-align: center;
+}
+
+section.usage .kicker {
+  text-align: center;
+}
+
+section.why {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'main aside';
+  grid-column-gap: 10rem;
+  padding-left: 30rem;
+  padding-right: 30rem;
+  padding-bottom: 8rem;
+}
+
+section.why main {
+  grid-area: main;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+section.why main p {
+  max-width: 30rem;
+}
+
+section.why main h3 {
+  margin-top: 2rem;
+}
+
+section.why aside {
   grid-area: aside;
-  width: 100%;
-  height: 100%;
-  background-image: url('/media/home-party.jpg');
-  background-position: center;
+  background-image: url('https://source.unsplash.com/d4ZYpoGjUXo/640x800');
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 0.75rem;
+}
+
+section.why ul {
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 1rem;
+}
+
+section.why ul li {
+  margin-bottom: 1rem;
+}
+
+section.why a.button {
+  margin-top: 2rem;
+  margin-left: 0;
+}
+
+section.testimonial {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'aside main';
+  grid-column-gap: 10rem;
+  padding-left: 30rem;
+  padding-right: 30rem;
+  padding-bottom: 8rem;
+}
+
+section.testimonial main {
+  grid-area: main;
+
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+
+section.testimonial main p {
+  max-width: 30rem;
+}
+
+section.testimonial aside {
+  grid-area: aside;
+  background-image: url('https://source.unsplash.com/l0t4qHtj3fs/640x960');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.75rem;
+}
+
+section.testimonial a.button {
+  margin-top: 3rem;
+  margin-left: 0;
+}
+
+section.newsletter {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem 30rem;
+  padding-bottom: 15rem;
+}
+
+section.newsletter .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'main aside';
+  grid-column-gap: 10em;
+}
+
+section.newsletter main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  width: 100%;
+}
+
+section.newsletter main p {
+  max-width: 30rem;
+}
+
+section.newsletter aside {
+  grid-area: aside;
+
+  border-radius: 0.75rem;
+
+  padding: 5rem 5rem;
+
+  -webkit-box-shadow: 0px 10px 30px -10px rgba(0,0,100,0.3);
+  -moz-box-shadow: 0px 10px 30px -10px rgba(0,0,100,0.3);
+  box-shadow: 0px 10px 30px -10px rgba(0,0,100,0.3);
+
+  display: flex;
+  flex-direction: column;
+
+  transition: box-shadow 150ms ease-out,
+              -webkit-box-shadow 150ms ease-out,
+              -moz-box-shadow 150ms ease-out;
+}
+
+section.newsletter aside:hover {
+  -webkit-box-shadow: 0px 10px 30px -10px rgba(0,0,200,0.4);
+  -moz-box-shadow: 0px 10px 30px -10px rgba(0,0,200,0.4);
+  box-shadow: 0px 10px 30px -10px rgba(0,0,200,0.4);
+}
+
+section.newsletter aside a.button {
+  margin-top: 3rem;
+  margin-left: 0;
+}
+
+section.newsletter aside {
+  display: flex;
+  flex-direction: column;
+}
+
+section.newsletter aside a.button {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+}
+
+section.newsletter aside > div {
+  width: 100%;
+  display: flex;
+}
+
+section.newsletter aside > div input[type=text]:first-of-type {
+  margin-right: 2rem;
+  width: 50%;
+}
+
+section.newsletter input[type=text] {
+  margin-bottom: 3rem;
+}
+
+section.newsletter input[type=text]::placeholder {
+  color: #999999;
+  text-transform: uppercase;
+}
+
+section.newsletter input[type=text][name=email] {
+  width: unset;
 }
