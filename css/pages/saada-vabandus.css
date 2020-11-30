@@ -59,7 +59,7 @@ main .inputs > div {
 
 main input[type=text].inline{
   text-transform: none;
-  border-bottom-color: #008CF0;
+  border-bottom-color: #007CF0;
 }
 
 main .email {
