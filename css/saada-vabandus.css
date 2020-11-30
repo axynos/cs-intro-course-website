@@ -9,12 +9,20 @@ main {
 
 main form {
   display: flex;
+  justify-content: center;
   flex-direction: column;
+
+  padding: 3rem 5rem;
+  border-radius: 0.75rem;
+
+  -webkit-box-shadow: 0px 10px 30px -10px rgba(0,0,100,0.3);
+  -moz-box-shadow: 0px 10px 30px -10px rgba(0,0,100,0.3);
+  box-shadow: 0px 10px 30px -10px rgba(0,0,100,0.3);
 }
 
-main form .form-radio-select {
-  margin-left: auto;
-  margin-right: auto;
+main h3 {
+  text-align: center;
+  text-transform: uppercase;
 }
 
 main .message {
@@ -27,70 +35,74 @@ main .message {
   text-transform: uppercase;
 }
 
-main form h3 {
-  text-align: center;
-  margin-bottom: 1rem;
-
-  font-weight: 700;
-  text-transform: uppercase;
+main form .form-radio-select {
+  margin-top: 0.25rem
 }
 
-main form button {
-  margin-top: 3rem;
+main .inputs {
+  padding-bottom: 3rem;
+}
+
+main .inputs > div {
+  margin-bottom: 3rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.inputs > input[type=text].inline {
+  display: block;
+  width: 100%;
+}
+
+main input[type=text].inline{
+  text-transform: none;
+  border-bottom-color: #008CF0;
 }
 
 main .email {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   flex-direction: column;
+
+  margin-left: -5rem;
+  margin-right: -5rem;
 }
 
 .email-preview {
+  flex: 1;
+
   display: flex;
   flex-direction: column;
 
-  max-width: 60rem;
   text-transform: none;
-  font-weight: 700;
+  font-weight: 500;
 
-  border: 3px solid black;
+  padding: 2rem 5rem;
+
+  border-top: 2px solid #e8e8e8;
+  border-bottom: 2px solid #e8e8e8;
+
+  white-space: pre-wrap;
 }
 
-.email-preview .email-header {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
-
-  grid-row-gap: 0.75rem;
-
-  padding: 1.5rem 2rem;
-  border-bottom: 3px solid black;
+main button {
+  margin-top: 3rem;
+  margin-bottom: 0rem;
 }
 
 .email-preview textarea.email-content {
   font-family: 'Roboto', sans-serif;
   font-size: initial;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.5rem;
 
   border: none;
-
   resize: none;
 
-  min-height: 15rem;
-  padding: 1.5rem 2rem;
+  max-width: 30rem;
+  min-height: 20rem;
 }
 
-.email label{
-  padding-right: 1rem;
-}
-
-.email input.inline[type=text]{
-  font-family: 'Roboto', sans-serif;
-  font-size: initial;
-  font-weight: 700;
-
-  width: 30rem;
-  text-transform: none;
-}
