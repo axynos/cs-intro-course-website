@@ -1,0 +1,189 @@
+main form .form-radio-select {
+  display: block;
+
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+form input[type=radio] {
+  display: none;
+}
+
+form .form-radio-label {
+  display: block;
+  float: left;
+  padding: 0.5rem 2rem;
+  background-color: #f4f4f4;
+  border-left: 2px solid #e8e8e8;
+
+  color: black;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  user-select: none;
+
+  transition: background-color 150ms ease-out,
+              color 150ms ease-out,
+              border 150ms ease-out;
+}
+
+.form-radio-label:hover {
+  background-color: #e8e8e8;
+}
+
+.form-radio-label:first-of-type {
+  border-top-left-radius: 10rem;
+  border-bottom-left-radius: 10rem;
+  border-left: none;
+}
+
+.form-radio-label:last-of-type {
+  border-top-right-radius: 10rem;
+  border-bottom-right-radius: 10rem;
+}
+
+input[type=radio]:checked+label {
+  color: white;
+  background-color: #007CF0;
+  border-left: 2px solid #f4f4f4;
+}
+
+input[type=radio]:checked+label:first-of-type {
+  border-left: none;
+}
+
+button, a.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.65rem;
+    margin: 1rem 2rem;
+    text-decoration: none;
+    background: black;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1.5rem;
+    transition: background 150ms ease-out,
+                color 150ms ease-out,
+                border 150ms ease-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button span, a.button span {
+  margin-left: 0.75rem;
+  margin-top: -0.2rem;
+  font-size: 1.25rem;
+}
+
+button.light, a.button.light {
+  background-color: white;
+  color: black;
+}
+
+button.ghost, a.button.ghost {
+  background: unset;
+  color:black;
+  border: 3px solid black;
+}
+
+button.inline, a.button.inline {
+  border: unset;
+  background: unset;
+  color: black;
+}
+
+button.ghost.light, a.button.ghost.light {
+  border: 3px solid white;
+  color: white;
+}
+
+button:hover, a.button:hover {
+  background-color: #008CF0;
+}
+
+button.inline:hover, a.button.inline:hover {
+  background-color: unset;
+  border: unset;
+  color: #008CF0;
+}
+
+button:focus, a.button:focus {
+  background-color: #007CF0;
+}
+
+button.light:hover, a.button.light:hover,
+button.light:focus, a.button.light:focus {
+  color: white;
+}
+
+button.ghost:hover, a.button.ghost:hover {
+  background-color: unset;
+  border: 3px solid #008CF0;
+  color: #008CF0;
+}
+
+button:active, a.button:active {
+    transform: scale(0.99);
+}
+
+.button-container.center {
+  display: flex;
+  justify-content: center;
+}
+
+input[type=text] {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+input[type=text]::placeholder {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+input[type=text].block {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+
+  border-radius: 50rem;
+  border: 3px solid #007CF0;
+  background-image:none;
+  background-color:transparent;
+
+  text-transform: uppercase;
+  text-align: center;
+
+  width: 30rem;
+}
+
+input[type=text].inline {
+  border: unset;
+  border-bottom: 3px solid black;
+  width: 15rem;
+
+  padding-bottom: 0.5rem;
+}
+
+span.kicker {
+  display: block;
+  margin-bottom: 0;
+  margin-top: 0;
+
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: #007CF0;
+
+  font-weight: 500;
+}
