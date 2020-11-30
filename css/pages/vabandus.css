@@ -36,6 +36,16 @@ aside a.button {
   -webkit-box-shadow: 0px 0px 30px -5px rgba(0,0,200,0.5);
   -moz-box-shadow: 0px 0px 30px -5px rgba(0,0,200,0.5);
   box-shadow: 0px 0px 30px -5px rgba(0,0,200,0.5);
+
+  /* Animatsiooni jaoks algne seis. */
+  transform: translateY(2rem);
+  opacity: 0;
+
+  animation-name: load;
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
 aside a.button span {
@@ -61,6 +71,16 @@ aside h1 {
   color: white;
 
   max-width: 65rem;
+
+  /* Animatsiooni jaoks algne seis. */
+  transform: translateY(2rem);
+  opacity: 0;
+
+  animation-name: load;
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
 aside h1 span.prefix {
@@ -79,6 +99,16 @@ main .form {
   -webkit-box-shadow: 0px 10px 30px -10px rgba(0,0,100,0.3);
   -moz-box-shadow: 0px 10px 30px -10px rgba(0,0,100,0.3);
   box-shadow: 0px 10px 30px -10px rgba(0,0,100,0.3);
+
+  /* Animatsiooni jaoks algne seis. */
+  transform: translateY(2rem);
+  opacity: 0;
+
+  animation-name: load;
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
 main .inputs {
