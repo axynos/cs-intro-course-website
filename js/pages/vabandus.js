@@ -40,7 +40,7 @@ function updateApology() {
 
 // Koostab uue mailto lingi koostatud vabanduse ning andmete põhjal ning kuvab selle
 function updateMailto() {
-    const mailto = assembleMailto(apology, data)
+    const mailto = assembleMailto(template, data)
     renderMailto(mailto)
 }
 
