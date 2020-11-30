@@ -12,6 +12,11 @@ main form {
   flex-direction: column;
 }
 
+main form .form-radio-select {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 main .message {
   text-align: center;
   margin-top: 5rem;
@@ -32,10 +37,6 @@ main form h3 {
 
 main form button {
   margin-top: 3rem;
-}
-
-form .form-radio-label {
-  padding: 1.2rem 1.75rem;
 }
 
 main .email {
