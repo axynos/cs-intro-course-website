@@ -209,7 +209,7 @@ section.newsletter .main p {
   max-width: 30rem;
 }
 
-section.newsletter aside {
+section.newsletter form {
   grid-area: aside;
 
   border-radius: 0.75rem;
@@ -228,34 +228,34 @@ section.newsletter aside {
               -moz-box-shadow 150ms ease-out;
 }
 
-section.newsletter aside:hover {
+section.newsletter form:hover {
   -webkit-box-shadow: 0px 10px 30px -10px rgba(0,0,200,0.4);
   -moz-box-shadow: 0px 10px 30px -10px rgba(0,0,200,0.4);
   box-shadow: 0px 10px 30px -10px rgba(0,0,200,0.4);
 }
 
-section.newsletter aside a.button {
+section.newsletter form a.button {
   margin-top: 3rem;
   margin-left: 0;
 }
 
-section.newsletter aside a.button {
+section.newsletter form a.button {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
 }
 
-section.newsletter aside > div {
+section.newsletter form > div {
   width: 100%;
   display: flex;
 }
 
-section.newsletter aside > div input[type=text]:first-of-type {
+section.newsletter form > div input[type=text]:first-of-type {
   margin-right: 1rem;
   width: 50%;
 }
 
-section.newsletter aside > div input[type=text]:last-of-type {
+section.newsletter form > div input[type=text]:last-of-type {
   margin-left: 1rem;
   width: 50%;
 }
@@ -324,16 +324,16 @@ section.newsletter input[type=text][name=email] {
     grid-template-columns: 1fr 1fr;
   }
 
-  section.newsletter aside {
+  section.newsletter form {
     padding: 2.5rem;
   }
 
-  section.newsletter aside > div input[type=text]:first-of-type {
+  section.newsletter form > div input[type=text]:first-of-type {
     margin-right: 0.5rem;
     width: 40%;
   }
 
-  section.newsletter aside > div input[type=text]:last-of-type {
+  section.newsletter form > div input[type=text]:last-of-type {
     margin-left: 0.5rem;
     width: 60%;
   }
@@ -356,7 +356,7 @@ section.newsletter input[type=text][name=email] {
     grid-template-columns: 1fr 1fr;
   }
 
-  section.newsletter aside {
+  section.newsletter form {
     padding: 2rem;
   }
 }
