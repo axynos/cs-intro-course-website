@@ -1,6 +1,6 @@
 // FUNKTSIOONID SISENDITE HALDAMISEKS
 
-// Hangime sisendite HTML elemendid
+// Hangime viited elementidele kust saame sisendid andmete jaoks
 const inputs = {
     //seriousness: document.getElementById('seriousness-input'),
     subject: document.getElementById('subject-input'),
@@ -27,15 +27,18 @@ function updateData() {
     history.replaceState(data, '', '?' + dataToUrlParams(data))
 }
 
+// Valib uue vabanduse malli ning säilitab selle hilisemaks kasutamiseks
 function updateTemplate() {
     template = chooseTemplate(data)
 }
 
+// Koostab uue vabanduse malli ja andmete põhjal ning kuvab selle
 function updateApology() {
     apology = assembleApology(template, data)
     renderApology(apology)
 }
 
+// Koostab uue mailto lingi koostatud vabanduse ning andmete põhjal ning kuvab selle
 function updateMailto() {
     const mailto = assembleMailto(apology, data)
     renderMailto(mailto)
@@ -43,6 +46,7 @@ function updateMailto() {
 
 // ABIFUNKTSIOONID VABANDUSTE KUVAMISEKS
 
+// Hangime viited elementidele mis kuhu kuvatakse generaatori väljundid
 const outputs = {
     overview: document.getElementById("overview"),
     heading: document.getElementById("heading-preview"),
