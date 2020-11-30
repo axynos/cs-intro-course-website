@@ -105,16 +105,11 @@ button.inline, a.button.inline {
 
 button.ghost.light, a.button.ghost.light {
   border: 3px solid white;
+  color: white;
 }
 
 button:hover, a.button:hover {
   background-color: #008CF0;
-}
-
-button.ghost:hover, a.button.ghost:hover {
-  background-color: unset;
-  border: 3px solid #008CF0;
-  color: #008CF0;
 }
 
 button.inline:hover, a.button.inline:hover {
@@ -132,6 +127,12 @@ button.light:focus, a.button.light:focus {
   color: white;
 }
 
+button.ghost:hover, a.button.ghost:hover {
+  background-color: unset;
+  border: 3px solid #008CF0;
+  color: #008CF0;
+}
+
 button:active, a.button:active {
     transform: scale(0.99);
 }
@@ -142,11 +143,14 @@ button:active, a.button:active {
 }
 
 input[type=text] {
-  font-size: 0.9rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 input[type=text]::placeholder {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 input[type=text].block {
@@ -159,21 +163,14 @@ input[type=text].block {
   background-color:transparent;
 
   text-transform: uppercase;
-  font-weight: 700;
-
   text-align: center;
 
   width: 30rem;
 }
 
-input[type=text]:focus {
-  outline: none;
-}
-
 input[type=text].inline {
-  border: none;
-  border-bottom: 2px solid black;
-  font-weight: 700;
+  border: unset;
+  border-bottom: 3px solid black;
   width: 15rem;
 
   padding-bottom: 0.5rem;

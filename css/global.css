@@ -1,6 +1,15 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
 html {
   font-family: 'Roboto', sans-serif !important;
   line-height: 1.5rem;
+}
+
+body {
+  min-height: 100vh;
 }
 
 h1 {
@@ -12,11 +21,7 @@ p {
   line-height: 1.85rem;
 }
 
-html, body {
-  padding: 0;
-  margin: 0;
-}
-
+/* Ligipääsetavuse jaoks on vaja see ära muuta.*/
 *:focus {
     outline: none;
 }

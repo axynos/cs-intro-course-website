@@ -156,7 +156,7 @@ section.why ul li {
 
 section.why a.button {
   margin-top: 2rem;
-  margin-left: 0;
+  margin-left: -2rem;
 }
 
 section.testimonial {
@@ -191,7 +191,7 @@ section.testimonial aside {
 
 section.testimonial a.button {
   margin-top: 3rem;
-  margin-left: 0;
+  margin-left: -2rem;
 }
 
 section.newsletter {
@@ -229,6 +229,7 @@ section.newsletter aside {
   border-radius: 0.75rem;
 
   padding: 5rem 5rem;
+  margin-left: -5rem;
 
   -webkit-box-shadow: 0px 10px 30px -10px rgba(0,0,100,0.3);
   -moz-box-shadow: 0px 10px 30px -10px rgba(0,0,100,0.3);
@@ -253,11 +254,6 @@ section.newsletter aside a.button {
   margin-left: 0;
 }
 
-section.newsletter aside {
-  display: flex;
-  flex-direction: column;
-}
-
 section.newsletter aside a.button {
   margin-left: 0;
   margin-right: 0;
@@ -276,11 +272,15 @@ section.newsletter aside > div input[type=text]:first-of-type {
 
 section.newsletter input[type=text] {
   margin-bottom: 3rem;
+  border-bottom-color: #008CF0;
+
+  font-weight: 500;
 }
 
 section.newsletter input[type=text]::placeholder {
   color: #999999;
   text-transform: uppercase;
+  font-weight: 700;
 }
 
 section.newsletter input[type=text][name=email] {
