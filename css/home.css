@@ -1,68 +1,288 @@
+.header-container {
+  filter: drop-shadow(0px 10px 30px rgba(0,0,0,0.3));
+  -webkit-filter: drop-shadow(0px 10px 30px rgba(0,0,0,0.3));
+  -moz-filter: drop-shadow(0px 10px 30px rgba(0,0,0,0.3));
+
+  clip-path: polygon(0 0, 100% 0, 100% 150%, 0% 150%)
+}
+
+header {
+  margin-bottom: 4rem;
+
+  padding-top: 12rem;
+  padding-bottom: 17rem;
+  padding-left: 30rem;
+  padding-right: 30rem;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+
+  clip-path: ellipse(125% 90% at 50% 0%);
+  background-color: black;
+}
+
+header .video-container {
+  grid-column: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* Peida logo SVG lehelt. */
+header svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+header video {
+  width: 100%;
+  height: auto;
+  clip-path: url(#logo-clip);
+}
+
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  grid-area: main;
 }
 
-main .logo {
-  display: flex;
-  justify-content: center;
-
-  margin-top: 6rem;
-  margin-bottom: 8rem;
-  height: 6.6rem;
+header .content {
+  grid-column: 1;
 }
 
-main .logo img {
-  height: 100%;
-  width: auto;
-
-  user-select: none;
-
-
-  background: linear-gradient(225deg, rgba(0,124,240,1) 0%, rgba(0,223,216,1) 100%);
-  background-size: 400% 400%;
-
-  -webkit-animation: logo-animation 15s ease infinite;
-     -moz-animation: logo-animation 15s ease infinite;
-          animation: logo-animation 15s ease infinite;
-}
-
-main form {
-  display: flex;
-  flex-direction: column;
-}
-
-main form h3 {
-  text-align: center;
-  margin-bottom: 1rem;
-
-  font-weight: 700;
+header .content h1 {
+  color: white;
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
 
-main form button {
+header .content p {
+  color: #e8e8e8;
+  margin-bottom: 6.5rem;
+}
+
+header .content form {
+  grid-area: content;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  margin-bottom: 5rem;
+}
+
+header .content form button {
+  margin-top: 8rem;
+  margin-left: 0;
+}
+
+section.usage .images {
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+section.usage .images img {
+  display: block;
+  border-radius: 100%;
+  height: 4rem;
+  width: 4rem;
+  background-color: #f4f4f4;
+
+  margin-left: 4rem;
+  user-select: none;
+}
+
+section.usage .images img:first-of-type {
+  margin-left: 0rem;
+}
+
+section.usage h2 {
+  text-align: center;
+}
+
+section.usage .kicker {
+  text-align: center;
+}
+
+section.why {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'main aside';
+  grid-column-gap: 10rem;
+  padding-left: 30rem;
+  padding-right: 30rem;
+  padding-bottom: 8rem;
+}
+
+section.why main {
+  grid-area: main;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+section.why main p {
+  max-width: 30rem;
+}
+
+section.why main h3 {
+  margin-top: 2rem;
+}
+
+section.why aside {
+  grid-area: aside;
+  background-image: url('https://source.unsplash.com/d4ZYpoGjUXo/640x800');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.75rem;
+}
+
+section.why ul {
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 1rem;
+}
+
+section.why ul li {
+  margin-bottom: 1rem;
+}
+
+section.why a.button {
+  margin-top: 2rem;
+  margin-left: 0;
+}
+
+section.testimonial {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'aside main';
+  grid-column-gap: 10rem;
+  padding-left: 30rem;
+  padding-right: 30rem;
+  padding-bottom: 8rem;
+}
+
+section.testimonial main {
+  grid-area: main;
+
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+
+section.testimonial main p {
+  max-width: 30rem;
+}
+
+section.testimonial aside {
+  grid-area: aside;
+  background-image: url('https://source.unsplash.com/l0t4qHtj3fs/640x960');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.75rem;
+}
+
+section.testimonial a.button {
   margin-top: 3rem;
+  margin-left: 0;
 }
 
-main form input[type=text] {
-  margin-top: 1.5rem;
+section.newsletter {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem 30rem;
+  padding-bottom: 15rem;
 }
 
-/* Animatsiooni loomiseks kasutasime lehte gradient-animator.com */
-@-webkit-keyframes logo-animation {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+section.newsletter .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'main aside';
+  grid-column-gap: 10em;
 }
-@-moz-keyframes logo-animation {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+
+section.newsletter main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  width: 100%;
 }
-@keyframes logo-animation {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+
+section.newsletter main p {
+  max-width: 30rem;
+}
+
+section.newsletter aside {
+  grid-area: aside;
+
+  border-radius: 0.75rem;
+
+  padding: 5rem 5rem;
+
+  -webkit-box-shadow: 0px 10px 30px -10px rgba(0,0,100,0.3);
+  -moz-box-shadow: 0px 10px 30px -10px rgba(0,0,100,0.3);
+  box-shadow: 0px 10px 30px -10px rgba(0,0,100,0.3);
+
+  display: flex;
+  flex-direction: column;
+
+  transition: box-shadow 150ms ease-out,
+              -webkit-box-shadow 150ms ease-out,
+              -moz-box-shadow 150ms ease-out;
+}
+
+section.newsletter aside:hover {
+  -webkit-box-shadow: 0px 10px 30px -10px rgba(0,0,200,0.4);
+  -moz-box-shadow: 0px 10px 30px -10px rgba(0,0,200,0.4);
+  box-shadow: 0px 10px 30px -10px rgba(0,0,200,0.4);
+}
+
+section.newsletter aside a.button {
+  margin-top: 3rem;
+  margin-left: 0;
+}
+
+section.newsletter aside {
+  display: flex;
+  flex-direction: column;
+}
+
+section.newsletter aside a.button {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+}
+
+section.newsletter aside > div {
+  width: 100%;
+  display: flex;
+}
+
+section.newsletter aside > div input[type=text]:first-of-type {
+  margin-right: 2rem;
+  width: 50%;
+}
+
+section.newsletter input[type=text] {
+  margin-bottom: 3rem;
+}
+
+section.newsletter input[type=text]::placeholder {
+  color: #999999;
+  text-transform: uppercase;
+}
+
+section.newsletter input[type=text][name=email] {
+  width: unset;
 }
