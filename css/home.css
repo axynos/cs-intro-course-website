@@ -6,7 +6,7 @@
   clip-path: polygon(0 0, 100% 0, 100% 150%, 0% 150%)
 }
 
-header {
+.header {
   margin-bottom: 4rem;
 
   padding-top: 13rem;
@@ -19,7 +19,7 @@ header {
   background-color: black;
 }
 
-header .video-container {
+.header .video-container {
   grid-column: 2;
 
   display: flex;
@@ -29,35 +29,35 @@ header .video-container {
 }
 
 /* Peida logo SVG lehelt. */
-header svg {
+.header svg {
   position: absolute;
   width: 0;
   height: 0;
 }
 
-header video {
+.header video {
   width: 100%;
   height: auto;
   clip-path: url(#logo-clip);
 }
 
-header .content {
+.header .content {
   grid-column: 1;
 }
 
-header .content h1 {
+.header .content h1 {
   color: white;
   margin-top: 0rem;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
 
-header .content p {
+.header .content p {
   color: #e8e8e8;
   margin-bottom: 6.5rem;
 }
 
-header .content form {
+.header .content form {
   grid-area: content;
 
   display: flex;
@@ -68,7 +68,7 @@ header .content form {
   margin-bottom: 5rem;
 }
 
-header .content form button {
+.header .content form button {
   margin-top: 8rem;
   margin-left: 0;
 }
