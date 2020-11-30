@@ -280,7 +280,7 @@ section.newsletter input[type=text][name=email] {
 }
 
 @media (min-width: 2000px) {
-  header {
+  .header {
     padding-left: 30rem;
     padding-right: 30rem;
     grid-column-gap: 10rem;
@@ -294,7 +294,7 @@ section.newsletter input[type=text][name=email] {
 }
 
 @media (max-width: 2000px) {
-  header {
+  .header {
     padding-left: 15rem;
     padding-right: 15rem;
     grid-column-gap: 5rem;
@@ -308,7 +308,7 @@ section.newsletter input[type=text][name=email] {
 }
 
 @media (max-width: 1440px) {
-  header {
+  .header {
     padding-left: 10rem;
     padding-right: 10rem;
     grid-column-gap: 5rem;
@@ -340,7 +340,7 @@ section.newsletter input[type=text][name=email] {
 }
 
 @media (max-width: 1024px) {
-  header {
+  .header {
     padding-left: 3rem;
     padding-right: 3rem;
     grid-column-gap: 2.5rem;
