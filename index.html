@@ -28,7 +28,7 @@
 
     <div class="header-container">
       <header>
-        <div class="content">
+        <main class="content">
           <h1>Vabandused igaks olukorraks.</h1>
           <p>Alustamine on lihtne — vali vabanduse olulisus.</p>
 
@@ -53,7 +53,7 @@
               <button class="light" type="submit">Vabanda välja<span class="material-icons">arrow_forward</span></button>
             </div>
           </form>
-        </div>
+        </main>
         <div class="video-container">
           <svg>
             <clipPath id="logo-clip" clipPathUnits="objectBoundingBox" transform="scale(1, 0.4)">
@@ -62,13 +62,13 @@
           </svg>
           <video autoPlay muted loop
           poster='media/video/hero-video-cover.jpg'>
-          <source src='media/video/hero-video-vp9.webm' type='video/webm; codecs=vp9' />
-          <source src='media/video/hero-video-720-vp9.webm' type='video/webm; codecs=vp9' />
-          <source src='media/video/hero-video-vp8.webm' type='video/webm; codecs=vp8' />
-          <source src='media/video/hero-video-720-vp8.webm' type='video/webm; codecs=vp8' />
-          <source src='media/video/hero-video.mp4' type='video/mp4' />
-          <source src='media/video/hero-video-720.mp4' type='video/mp4' />
-          <img intrinsicsize="1920 x 1080" src='media/video/hero-video-cover.jpg' />
+          <source src='media/video/hero-video-vp9.webm' type='video/webm; codecs=vp9'/>
+          <source src='media/video/hero-video-720-vp9.webm' type='video/webm; codecs=vp9'/>
+          <source src='media/video/hero-video-vp8.webm' type='video/webm; codecs=vp8'/>
+          <source src='media/video/hero-video-720-vp8.webm' type='video/webm; codecs=vp8'/>
+          <source src='media/video/hero-video.mp4' type='video/mp4'/>
+          <source src='media/video/hero-video-720.mp4' type='video/mp4'/>
+          <img src='media/video/hero-video-cover.jpg' alt='Video kaanefoto'/>
         </video>
         </div>
       </header>
@@ -90,10 +90,11 @@
              alt="Pilt inimesest" draggable="false">
         <img src="https://images.unsplash.com/photo-1504834636679-cd3acd047c06?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=300"
              alt="Pilt inimesest" draggable="false">
+      </div>
     </section>
 
     <section class="why">
-      <main>
+      <div class="main">
         <span class="kicker">Elus on tähtsamaid asju</span>
         <h2>Asenda töö tegemine vabandamisega</h2>
 
@@ -111,14 +112,14 @@
         </ul>
 
         <a class="button inline" href="meist.html">Visioonist</a>
-      </main>
+      </div>
       <aside>
 
       </aside>
     </section>
 
     <section class="testimonial">
-      <main>
+      <div class="main">
         <span class="kicker">Oma silm on kuningas — Kristiina</span>
         <h2>Efektiivne vabandamine päästab elusid</h2>
 
@@ -134,19 +135,19 @@
         <a class="button inline" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
           Loe edasi<span class="material-icons">call_made</span>
         </a>
-      </main>
+      </div>
       <aside>
 
       </aside>
     </section>
 
     <section class="newsletter">
-      <main>
+      <div class="main">
         <span class="kicker">Tuvipostiga kirjakasti</span>
         <h2>Liitu meie uudiskirjaga</h2>
         <p>Saadame sulle parimad nipid igast olukorrast välja saamiseks just siis, kui neid vaja on.</p>
         <p>Ära küsi, kuidas me teame, et käes on õige aeg. Sa ei taha teada.</p>
-      </main>
+      </div>
       <aside>
         <div>
           <input class="inline" type="text" name="firstname" value="" placeholder="Eesnimi">
@@ -161,12 +162,12 @@
 
     <footer>
       <div class="copyright">
-        <a href="/">Vabanduste Generaator<span class="material-icons">copyright</span></a>
+        <a href=".">Vabanduste Generaator<span class="material-icons">copyright</span></a>
       </div>
       <ul>
-        <li><a href="/">Avaleht</a></li>
-        <li><a href="#">Meist</a></li>
-        <li><a href="test.html">Lisa vabandus</a></li>
+        <li><a href=".">Avaleht</a></li>
+        <li><a href="meist">Meist</a></li>
+        <li><a href="saada-vabandus">Lisa vabandus</a></li>
       </ul>
     </footer>
   </body>
