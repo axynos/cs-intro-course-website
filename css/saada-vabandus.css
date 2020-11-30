@@ -12,6 +12,7 @@ main {
   align-items: center;
 
   padding-top: 3rem;
+  padding-bottom: 7rem;
 }
 
 main form {
@@ -32,20 +33,6 @@ main h3 {
   text-transform: uppercase;
 
   margin-bottom: 5rem;
-}
-
-main .message {
-  text-align: center;
-  margin-top: 6rem;
-  margin-bottom: 1rem;
-
-  font-size: 2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-main .message p {
-  color: initial;
 }
 
 main form .form-radio-select {
