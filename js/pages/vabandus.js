@@ -13,7 +13,6 @@ const inputs = {
 
 let data = {}
 let template = null
-let apology = null
 
 function updateData() {
     // Hangime sisenditest uued andmed
@@ -34,7 +33,7 @@ function updateTemplate() {
 
 // Koostab uue vabanduse malli ja andmete põhjal ning kuvab selle
 function updateApology() {
-    apology = assembleApology(template, data)
+    const apology = assembleApology(template, data)
     renderApology(apology)
 }
 
