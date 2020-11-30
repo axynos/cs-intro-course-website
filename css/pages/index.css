@@ -26,6 +26,16 @@
 
   text-align: center;
   color: white;
+
+  /* Animatsiooni jaoks algne seis. */
+  opacity: 0;
+
+  animation-name: load-nomove;
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-delay: 0ms;
 }
 
 .header .scroll-down span {
@@ -64,10 +74,30 @@
   height: auto;
 
   padding-bottom: 7.5rem;
+
+  /* Animatsiooni jaoks algne seis. */
+  opacity: 0;
+
+  animation-name: load-nomove;
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-delay: 500ms;
 }
 
 .header .content {
   grid-area: main;
+
+  /* Animatsiooni jaoks algne seis. */
+  transform: translateY(2rem);
+  opacity: 0;
+
+  animation-name: load;
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
 .header .content h1 {
@@ -100,6 +130,18 @@
 
 .main {
   grid-area: main;
+}
+
+section.usage {
+  /* Animatsiooni jaoks algne seis. */
+  opacity: 0;
+
+  animation-name: load-nomove;
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-delay: 1000ms;
 }
 
 section.usage .images {
@@ -287,7 +329,7 @@ section.newsletter form > div input[type=text]:last-of-type {
 
 section.newsletter input[type=text].inline {
   margin-bottom: 3rem;
-  border-bottom-color: #008CF0;
+  border-bottom-color: #007CF0;
 
   font-weight: 500;
 
@@ -311,15 +353,24 @@ form .form-radio-select label {
 
 @media (min-width: 2000px) {
   .header {
-    padding-left: 30rem;
-    padding-right: 30rem;
+    padding-left: 15rem;
+    padding-right: 15rem;
     grid-column-gap: 10rem;
+    grid-template-columns: 1fr 1fr;
   }
 
   section {
     padding-left: 30rem;
     padding-right: 30rem;
     grid-column-gap: 10rem;
+  }
+
+  nav .logo {
+    padding-left: 15rem;
+  }
+
+  nav .menu-desktop {
+    padding-right: 15rem;
   }
 }
 

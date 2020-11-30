@@ -57,8 +57,8 @@ const outputs = {
 // Kuvab koostatud vabanduse lehel
 function renderApology(apology) {
     outputs.overview.textContent = apology.overview
-    outputs.heading.textContent = apology.heading
-    outputs.mail.textContent = apology.mail
+    outputs.heading.innerHTML = apology.heading
+    outputs.mail.innerHTML = apology.mail
 }
 
 // Kuvab mailto lingi lehel

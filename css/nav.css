@@ -128,11 +128,11 @@ nav .menu-desktop {
 
 @media (min-width: 2000px) {
   nav .logo {
-    padding-left: 15rem;
+    padding-left: 30rem;
   }
 
   nav .menu-desktop {
-    padding-right: 15rem;
+    padding-right: 30rem;
   }
 
   .menu-desktop li:not(:last-of-type) {
