@@ -14,7 +14,6 @@ nav {
   display: grid;
   height: 100%;
 
-  grid-template-columns: 1fr 1fr;
   grid-template-areas: 'aside main';
   margin-bottom: auto;
 }
@@ -25,8 +24,6 @@ aside {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-left: 20rem;
-  padding-right: 10rem;
 
   background-color: black;
 }
@@ -71,16 +68,12 @@ aside h1 span.prefix {
 }
 
 main {
-  padding-right: 20rem;
-  padding-left: 10rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 main .form {
-  padding: 3rem 5rem;
   border-radius: 0.75rem;
 
   -webkit-box-shadow: 0px 10px 30px -10px rgba(0,0,100,0.3);
@@ -128,9 +121,6 @@ main .email {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  margin-left: -5rem;
-  margin-right: -5rem;
 }
 
 .email-preview {
@@ -139,8 +129,6 @@ main .email {
 
   text-transform: none;
   font-weight: 500;
-
-  padding: 2rem 5rem;
 
   border-top: 2px solid #e8e8e8;
   border-bottom: 2px solid #e8e8e8;
@@ -177,4 +165,156 @@ p#email-preview {
 
 footer {
   grid-area: footer;
+}
+
+@media (min-width: 2000px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  aside {
+    padding-left: 15rem;
+    padding-right: 10rem;
+  }
+
+  main {
+    padding-right: 15rem;
+    padding-left: 10rem;
+  }
+
+  main .form {
+    padding: 3rem 5rem;
+  }
+
+  .email-preview {
+    padding: 2rem 5rem;
+  }
+
+  main .email {
+    margin-left: -5rem;
+    margin-right: -5rem;
+  }
+}
+
+@media (max-width: 2000px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  aside {
+    padding-left: 15rem;
+    padding-right: 10rem;
+  }
+
+  main {
+    padding-right: 15rem;
+    padding-left: 10rem;
+  }
+
+  main .form {
+    padding: 3rem 2.5rem;
+  }
+
+  .email-preview {
+    padding: 2rem 2.5rem;
+  }
+
+  main .email {
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
+  }
+
+  nav .logo {
+    padding-left: 15rem;
+  }
+
+  nav .menu-desktop {
+    padding-right: 15rem;
+  }
+
+  .menu-desktop li:not(:last-of-type) {
+    margin-right: 5rem;
+  }
+}
+
+@media (max-width: 1750px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  aside {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  main {
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+
+  main .form {
+    padding: 3rem 2.5rem;
+  }
+
+  .email-preview {
+    padding: 2rem 2.5rem;
+  }
+
+  main .email {
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
+  }
+
+  nav .logo {
+    padding-left: 5rem;
+  }
+
+  nav .menu-desktop {
+    padding-right: 5rem;
+  }
+
+  .menu-desktop li:not(:last-of-type) {
+    margin-right: 4rem;
+  }
+}
+
+@media (max-width: 1440px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  aside {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  main {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+  }
+
+  main .form {
+    padding: 3rem 1.5rem;
+  }
+
+  .email-preview {
+    padding: 2rem 1.5rem;
+  }
+
+  main .email {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+
+  nav .logo {
+    padding-left: 2.5rem;
+  }
+
+  nav .menu-desktop {
+    padding-right: 2.5rem;
+  }
+
+  .menu-desktop li:not(:last-of-type) {
+    margin-right: 3rem;
+  }
 }
