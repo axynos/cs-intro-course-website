@@ -98,8 +98,7 @@ const templates = {
             overview: 'Koer sõi naabri kassi ära',
             heading: _ => `Kodutöö viivitus (${_.subject})`,
             mail: _ => mail(_,
-`Olen sattunud mõnevõrra keerulisse olukorda, kuna eile õhtul sõi mu koer ootamatult naabri kassi ära. Seetõttu pean hetkel tegelema tekkinud segadusega ning ei saa kahjuks kodutööd õigeaegselt esitada.
-Loodan, et mõistate olukorra tõsidust ning saate tähtaega pikendada.`
+`Olen sattunud mõnevõrra keerulisse olukorda, kuna eile õhtul sõi mu koer ootamatult naabri kassi ära. Seetõttu pean hetkel tegelema tekkinud segadusega ning ei saa kahjuks kodutööd õigeaegselt esitada. Loodan, et mõistate olukorra tõsidust ning saate tähtaega pikendada.`
             )
         },
         {
