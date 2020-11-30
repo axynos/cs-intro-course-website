@@ -6,7 +6,7 @@
   clip-path: polygon(0 0, 100% 0, 100% 150%, 0% 150%)
 }
 
-header {
+.header {
   margin-bottom: 4rem;
 
   padding-top: 13rem;
@@ -19,7 +19,7 @@ header {
   background-color: black;
 }
 
-header .video-container {
+.header .video-container {
   grid-column: 2;
 
   display: flex;
@@ -29,39 +29,35 @@ header .video-container {
 }
 
 /* Peida logo SVG lehelt. */
-header svg {
+.header svg {
   position: absolute;
   width: 0;
   height: 0;
 }
 
-header video {
+.header video {
   width: 100%;
   height: auto;
   clip-path: url(#logo-clip);
 }
 
-main {
-  grid-area: main;
-}
-
-header .content {
+.header .content {
   grid-column: 1;
 }
 
-header .content h1 {
+.header .content h1 {
   color: white;
   margin-top: 0rem;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
 
-header .content p {
+.header .content p {
   color: #e8e8e8;
   margin-bottom: 6.5rem;
 }
 
-header .content form {
+.header .content form {
   grid-area: content;
 
   display: flex;
@@ -72,9 +68,13 @@ header .content form {
   margin-bottom: 5rem;
 }
 
-header .content form button {
+.header .content form button {
   margin-top: 8rem;
   margin-left: 0;
+}
+
+.main {
+  grid-area: main;
 }
 
 section.usage .images {
@@ -116,17 +116,17 @@ section.why {
   padding-bottom: 8rem;
 }
 
-section.why main {
+section.why .main {
   grid-area: main;
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
 
-section.why main p {
+section.why .main p {
   max-width: 30rem;
 }
 
-section.why main h3 {
+section.why .main h3 {
   margin-top: 2rem;
 }
 
@@ -161,14 +161,14 @@ section.testimonial {
   padding-bottom: 8rem;
 }
 
-section.testimonial main {
+section.testimonial .main {
   grid-area: main;
 
   padding-top: 4rem;
   padding-bottom: 3rem;
 }
 
-section.testimonial main p {
+section.testimonial .main p {
   max-width: 30rem;
 }
 
@@ -195,7 +195,7 @@ section.newsletter {
   padding-bottom: 15rem;
 }
 
-section.newsletter main {
+section.newsletter .main {
   grid-area: main;
   display: flex;
   flex-direction: column;
@@ -205,7 +205,7 @@ section.newsletter main {
   width: 100%;
 }
 
-section.newsletter main p {
+section.newsletter .main p {
   max-width: 30rem;
 }
 
@@ -280,7 +280,7 @@ section.newsletter input[type=text][name=email] {
 }
 
 @media (min-width: 2000px) {
-  header {
+  .header {
     padding-left: 30rem;
     padding-right: 30rem;
     grid-column-gap: 10rem;
@@ -294,7 +294,7 @@ section.newsletter input[type=text][name=email] {
 }
 
 @media (max-width: 2000px) {
-  header {
+  .header {
     padding-left: 15rem;
     padding-right: 15rem;
     grid-column-gap: 5rem;
@@ -308,7 +308,7 @@ section.newsletter input[type=text][name=email] {
 }
 
 @media (max-width: 1440px) {
-  header {
+  .header {
     padding-left: 10rem;
     padding-right: 10rem;
     grid-column-gap: 5rem;
@@ -340,7 +340,7 @@ section.newsletter input[type=text][name=email] {
 }
 
 @media (max-width: 1024px) {
-  header {
+  .header {
     padding-left: 3rem;
     padding-right: 3rem;
     grid-column-gap: 2.5rem;
