@@ -25,16 +25,16 @@
 
     <main>
       <h3>Tead mõnda head vabandust ja tahad seda meiega jagada? Saada meile oma vabandus!</h3>
-      <form id="excuse-form" autocomplete="off">
+      <form id="submittable-form" autocomplete="off" data-target="https://docs.google.com/forms/d/e/1FAIpQLScpjOxsftNGBe3NcSJ2BJuTBhonHYr0WC_RVug0Ofu5bAL2gw/formResponse" data-action="vabandus-saadetud">
 
         <div class="form-radio-select">
-          <input class="form-radio-button" id="seriousness-1" type="radio" name="seriousness" value="kodutöö" checked="checked"/>
+          <input class="form-radio-button" id="seriousness-1" type="radio" name="entry.1834590686" value="kodutöö" checked="checked"/>
           <label class="form-radio-label" for="seriousness-1">Kodutöö</label>
-          <input class="form-radio-button" id="seriousness-2" type="radio" name="seriousness" value="kontrolltöö"/>
+          <input class="form-radio-button" id="seriousness-2" type="radio" name="entry.1834590686" value="kontrolltöö"/>
           <label class="form-radio-label" for="seriousness-2">Kontrolltöö</label>
-          <input class="form-radio-button" id="seriousness-3" type="radio" name="seriousness" value="eksam"/>
+          <input class="form-radio-button" id="seriousness-3" type="radio" name="entry.1834590686" value="eksam"/>
           <label class="form-radio-label" for="seriousness-3">Eksam</label>
-          <input class="form-radio-button" id="seriousness-4" type="radio" name="seriousness" value="lõputöö"/>
+          <input class="form-radio-button" id="seriousness-4" type="radio" name="entry.1834590686" value="lõputöö"/>
           <label class="form-radio-label" for="seriousness-4">Lõputöö</label>
         </div>
 
@@ -54,6 +54,6 @@
       </form>
     </main>
 
-    <script src="js/pages/saada-vabandus.js"></script>
+    <script src="js/form-sender.js"></script>
   </body>
 </html>

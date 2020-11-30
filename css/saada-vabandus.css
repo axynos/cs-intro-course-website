@@ -27,12 +27,16 @@ main h3 {
 
 main .message {
   text-align: center;
-  margin-top: 5rem;
+  margin-top: 6rem;
   margin-bottom: 1rem;
 
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+main .message p {
+  color: initial;
 }
 
 main form .form-radio-select {
