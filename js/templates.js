@@ -10,18 +10,33 @@ ${_.student || ' '}`
 const mailLõputöö = (_, content) =>
 `Lugupeetud ${_.teacher},
 
-Kirjutan teile oma lõputöö, ${_.subject}, osas. ${content}
+Kirjutan teile oma lõputöö "${_.subject}" osas. ${content}
 
 Siiralt teie,
 ${_.student || ' '}`
 
+// Mallid vabanduste jaoks
 const templates = {
     lõputöö: [
         {
-            overview: 'Pean minema hambaarsti juurde',
-            heading: _ => `Eksami aeg (${_.subject})`,
+            overview: 'Ma ei oska oma aega planeerida',
+            heading: _ => `Lõputöö viivitus`,
             mail: _ => mailLõputöö(_,
-`Ootamatult on selgunud, et ma ei oska oma aega planeerida, ning sellest tulenevalt ei saa minu lõputöö (${_.subject}) planeeritud ajaks valmis. Loodan saada lõputöö valmis pärast tähtaega. Loodan et suhtute mõistvalt, ning võimaldate mulle pisut lisaaega.`
+`Ootamatult on selgunud, et ma ei oska oma aega planeerida, ning sellest tulenevalt ei saa minu lõputöö planeeritud ajaks valmis. Loodan saada lõputöö valmis pärast tähtaega. Loodan et suhtute mõistvalt, ning võimaldate mulle pisut lisaaega.`
+            )
+        },
+        {
+            overview: 'Mind rööviti tulnukate poolt',
+            heading: _ => `Lõputöö valmimine`,
+            mail: _ => mailLõputöö(_,
+`Lõputöö valmimine oleks lõpusirgel, kuid ootamatult olen sattunud olukorda, kus mind on röövitud tulnukate poolt. Kuna olen vangistatud nende laevas ning minuga tehakse ebainimlike katseid, siis usun, et mõistate, et ma ei saa hetkel olukorras, kus ma saaksin lõputööga tegeleda. Loodan, et mõistate minu olukorda, ning pikendate minu lõputöö tähtaega.`
+            )
+        },
+        {
+            overview: 'Mu kakaotassis oli surnud hiir',
+            heading: _ => `Lõputöö valmimine`,
+            mail: _ => mailLõputöö(_,
+`Eile õhtul lõputöö kallal töötades avastasin ma oma kakaotassist, kust ma olin just asunud kakaod jooma, surnud hiire. See on viinud mind emotsionaalselt niivõrd tasakaalust välja, et ma ei ole hetkel võimeline lõputöö kallal töötama. Loodan, et mõistate olukorra tõsidust ning olete lõputöö tähtaegade suhtes paindlik.`
             )
         }
     ],
@@ -32,14 +47,49 @@ const templates = {
             mail: _ => mail(_,
 `Ootamatult on selgunud, et mul on eksamiga samal päeval hambaarstiaeg. Seetõttu palun võimalust teha eksam mõnel teisel ajal. Loodan et saate mulle selles osas vastu tulla.`
             )
+        },
+        {
+            overview: 'Sõin halvaks läinud juustu ning ärkasin Poolas',
+            heading: _ => `Eksami tegemine (${_.subject})`,
+            mail: _ => mail(_,
+`Minuga on juhtunud mõned kummalised asjad ning seetõttu ei ole mul võimalik eksamile jõuda. Pühapäeva õhtul sattusin sööma väga kahtlase maitsega, halvaks läinud juustu ning järgmine asi mis ma mäletan on, et ärkasin tundmatus kohas. Olen teinud kindlaks, et asun hetkel Krakowis, Poolas. Kuna mul läheb tagasi Eestisse jõudmiseks vähemalt 4 päeva, siis ma sessi ajaks ilmselgelt tagasi ei jõua. Loodan, et mõistate olukorda ning võimaldate mul teha eksami mingil teisel ajal.`
+            )
+        },
+        {
+            overview: 'Koera vanaaema suri ära',
+            heading: _ => `Kontrolltöö tegemine (${_.subject})`,
+            mail: _ => mail(_,
+`Meie peres on hetkel lein, kuna minu koera vanaaema suri ära. Usun, et mõistate, et ma ei ole hetkel emotsionaalselt kohases seisundis selleks et aines ${_.subject} eksamit sooritada. Loodan, et võimaldate mulle aega, et selle suure kaotusega kohaneda ning lubate mul teha eksami hilisemal ajal.`
+            )
         }
     ],
     kontrolltöö: [
         {
             overview: 'Pean minema hambaarsti juurde',
-            heading: _ => `Eksami aeg (${_.subject})`,
+            heading: _ => `Kontrolltöö aeg (${_.subject})`,
             mail: _ => mail(_,
 `Ootamatult on selgunud, et mul on kontrolltööga samal päeval hambaarstiaeg. Seetõttu palun võimalust teha kontrolltöö mõnel teisel ajal. Loodan et saate mulle selles osas vastu tulla.`
+            )
+        },
+        {
+            overview: 'Sõin halvaks läinud juustu ning ärkasin Poolas',
+            heading: _ => `Kontrolltöö tegemine (${_.subject})`,
+            mail: _ => mail(_,
+`Minuga on juhtunud mõned kummalised asjad ning seetõttu ei ole mul võimalik kontrolltööle jõuda. Pühapäeva õhtul sattusin sööma väga kahtlase maitsega, halvaks läinud juustu ning järgmine asi mis ma mäletan on, et ärkasin tundmatus kohas. Olen teinud kindlaks, et asun hetkel Krakowis, Poolas. Kuna mul läheb tagasi Eestisse jõudmiseks vähemalt 4 päeva, siis ma kontrolltööle ilmselgelt ei jõua. Loodan, et mõistate olukorda ning võimaldate mul teha kontrolltöö mingil teisel ajal.`
+            )
+        },
+        {
+            overview: 'Koera vanaaema suri ära',
+            heading: _ => `Kontrolltöö tegemine (${_.subject})`,
+            mail: _ => mail(_,
+`Meie peres on hetkel lein, kuna minu koera vanaaema suri ära. Usun, et mõistate, et ma ei ole hetkel emotsionaalselt kohases seisundis selleks et aines ${_.subject} kontrolltööd teha. Loodan, et võimaldate mulle aega, et selle suure kaotusega kohaneda ning lubate mul teha kontrolltöö hilisemal ajal.`
+            )
+        },
+        {
+            overview: 'Ei saanud liigutada, kuna kass jäi minu peale magama',
+            heading: _ => `Kontrolltöö aeg`,
+            mail: _ => mailLõputöö(_,
+`Kirjutan teile just toimunud kontrolltöö asjus teie aines ${_.subject}. Teatan, et ei ilmunud kontrolltööd tegema, kuna minu kass jäi minu peale magama ning seetõttu ei saanud ma liigutada. Kuna ma ei saanud liigutada, ei saanud ma ka kontrolltööle tulla. Loodan, et mõistate olukorda ning võimaldate mul kontrolltööd järgi teha.`
             )
         }
     ],

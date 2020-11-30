@@ -73,12 +73,12 @@ data = urlParamsToData(window.location.search)
 inputs.subject.value = data.subject
 inputs.teacher.value = data.teacher
 inputs.student.value = data.student
-//inputs.address.value = data.address
+inputs.address.value = data.address
 
 inputs.subject.addEventListener('input', e => { updateData(); updateApology() })
 inputs.teacher.addEventListener('input', e => { updateData(); updateApology() })
 inputs.student.addEventListener('input', e => { updateData(); updateApology() })
-//inputs.address.addEventListener('input', e => { updateData(); updateApology() })
+inputs.address.addEventListener('input', e => { updateData(); updateApology() })
 
 outputs.mailto.addEventListener('click', e => updateMailto())
 outputs.mailto.addEventListener('contextmenu', e => updateMailto())

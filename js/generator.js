@@ -9,8 +9,8 @@
         <vabanduse mall JS=i objektina>
 */
 
-function chooseTemplate(andmed) {
-    const possibleTemplates = templates[andmed.seriousness] || templates.kodutöö
+function chooseTemplate(data) {
+    const possibleTemplates = templates[data.seriousness] || templates.kodutöö
     return possibleTemplates[Math.floor(Math.random() * possibleTemplates.length)]
 }
 
@@ -25,8 +25,13 @@ function chooseTemplate(andmed) {
         <koostatud vabandus JS-i objektina, kuhu on kõik vajalikud andmed sisestatud>
 */
 function assembleApology(template, data) {
-    const heading = template.heading(data)
-    const mail = template.mail(data)
+    const dataWithPlaceholders = {
+        subject: data.subject || (data.seriousness === 'lõputöö' ? '<teema>' : '<aine>'),
+        teacher: data.teacher || '<õppejõud>',
+        student: data.student || '<nimi>',
+    }
+    const heading = template.heading(dataWithPlaceholders)
+    const mail = template.mail(dataWithPlaceholders)
 
     return {
         overview: template.overview,
