@@ -1,10 +1,11 @@
 footer {
   padding: 0.75rem 30rem;
-  background-color: black;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: 'copyright menu'
+  grid-template-areas: 'copyright menu';
+
+  background-color: black;
 }
 
 footer a {
@@ -29,14 +30,16 @@ footer a:visited {
   color: white;
 }
 
-footer .copyright span {
-  margin-left: 0.5rem;
-  font-size: 1.15rem;
-}
-
 footer .copyright {
   display: flex;
   justify-content: flex-start;
+
+  background-color: black;
+}
+
+footer .copyright span {
+  margin-left: 0.5rem;
+  font-size: 1.15rem;
 }
 
 footer ul {
@@ -45,6 +48,8 @@ footer ul {
   justify-content: flex-end;
 
   list-style: none;
+
+  background-color: black;
 }
 
 footer ul li {
@@ -52,12 +57,18 @@ footer ul li {
 }
 
 footer ul li a {
+  color: black;
+
   -webkit-transition: all 150ms cubic-bezier(0.6, 0, 0.4, 1);
        -o-transition: all 150ms cubic-bezier(0.6, 0, 0.4, 1);
           transition: all 150ms cubic-bezier(0.6, 0, 0.4, 1);
 }
 
 footer ul li a:hover {
+  color: #008CF0;
+}
+
+footer.split ul li a:hover {
   color: #008CF0;
 }
 

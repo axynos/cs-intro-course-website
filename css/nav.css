@@ -1,12 +1,8 @@
 nav {
   display: grid;
-  grid-template-columns: 0.25fr 0.75fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas: 'logo menu-desktop';
-
-  padding: 1.5rem 30rem;
-
-  transition: opacity 250ms ease-out;
 
   background-color: white;
 }
@@ -16,6 +12,7 @@ nav.dark {
 }
 
 nav a {
+  transition: opacity 250ms ease-out;
   opacity: 0.25;
 }
 
@@ -30,21 +27,47 @@ nav .logo {
   justify-content: flex-start;
   align-items: center;
 
-  height: 100%;
-  width: 100%;
-
+  padding-left: 30rem;
   padding-right: 1rem;
+
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+nav.split .logo {
+  padding-right: 0;
+}
+
+nav.split .logo img {
+  display: none;
+}
+
+nav.split .logo img.split-only {
+  display: block;
+}
+
+nav.split {
+  padding-right: 0;
+  background-color: black;
+}
+
+nav.split .menu-desktop {
+  background-color: white;
 }
 
 nav .logo img {
   display: block;
 
-  max-height: 2rem;
-  max-width: 100%;
+  height: 1.5rem;
+  width: auto;
 }
 
 nav .menu-desktop {
   grid-area: menu-desktop;
+
+  padding-right: 30rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 
   display: flex;
   justify-content: flex-end;
@@ -54,8 +77,6 @@ nav .menu-desktop {
 
   font-weight: 700;
   font-size: 1.05rem;
-
-  padding-left: 1rem;
 
   margin: 0;
 }
