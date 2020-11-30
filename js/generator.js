@@ -40,8 +40,13 @@ function assembleApology(template, data) {
     }
 }
 
-function assembleMailto(apology, data) {
-    return `mailto:${data.address.trim() || 'õppejõu.nimi@ut.ee'}?subject=${encodeURIComponent(apology.heading)}&body=${encodeURIComponent(apology.mail)}`
+function assembleMailto(template, data) {
+    const dataWithPlaceholders = {
+        subject: data.subject || (data.seriousness === 'lõputöö' ? 'TEEMA' : 'AINE'),
+        teacher: data.teacher || 'ÕPPEJÕUD',
+        student: data.student || 'NIMI'
+    }
+    return `mailto:${data.address.trim() || 'õppejõu.nimi@ut.ee'}?subject=${encodeURIComponent(template.heading(dataWithPlaceholders))}&body=${encodeURIComponent(template.mail(dataWithPlaceholders))}`
 }
 
 // Teisendab andmete objekti url parameetrite sõneks
