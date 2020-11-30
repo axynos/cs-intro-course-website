@@ -10,17 +10,48 @@
   margin-bottom: 4rem;
 
   padding-top: 13rem;
-  padding-bottom: 17rem;
+  padding-bottom: 10rem;
 
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 'main video' 'scroll-down scroll-down';
 
   clip-path: ellipse(125% 90% at 50% 0%);
   background-color: black;
 }
 
+.header .scroll-down {
+  grid-area: scroll-down;
+
+  text-align: center;
+  color: white;
+}
+
+.header .scroll-down span {
+  font-weight: 500;
+  font-size: 2rem;
+
+  animation-name: scroll;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0rem);
+  }
+  50% {
+    transform: translateY(0.75rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}
+
 .header .video-container {
-  grid-column: 2;
+  grid-area: video;
 
   display: flex;
   flex-direction: column;
@@ -28,20 +59,15 @@
   align-items: flex-end;
 }
 
-/* Peida logo SVG lehelt. */
-.header svg {
-  position: absolute;
-  width: 0;
-  height: 0;
-}
-
 .header video {
   width: 100%;
   height: auto;
+
+  padding-bottom: 7.5rem;
 }
 
 .header .content {
-  grid-column: 1;
+  grid-area: main;
 }
 
 .header .content h1 {
@@ -131,7 +157,7 @@ section.why .main h3 {
 
 section.why aside {
   grid-area: aside;
-  background-image: url('https://source.unsplash.com/d4ZYpoGjUXo/640x800');
+  background-image: url('https://source.unsplash.com/YyZFSb_U6N4/640x800');
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -278,6 +304,11 @@ section.newsletter input[type=text][name=email] {
   width: unset;
 }
 
+form .form-radio-select label {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 @media (min-width: 2000px) {
   .header {
     padding-left: 30rem;
@@ -303,6 +334,12 @@ section.newsletter input[type=text][name=email] {
     padding-left: 15rem;
     padding-right: 15rem;
     grid-column-gap: 7.5rem;
+  }
+}
+
+@media (max-width: 1750px) {
+  .header {
+    grid-template-columns: 1.3fr 0.7fr;
   }
 }
 
@@ -335,6 +372,16 @@ section.newsletter input[type=text][name=email] {
   section.newsletter aside > div input[type=text]:last-of-type {
     margin-left: 0.5rem;
     width: 60%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .header {
+    grid-template-columns: 1fr 0fr;
+  }
+
+  .header .video-container {
+    display: none;
   }
 }
 
