@@ -129,3 +129,33 @@ nav .menu-desktop {
 .dark li a:visited {
   color: white
 }
+
+@media (max-width: 2000px) {
+  nav .logo {
+    padding-left: 15rem;
+  }
+
+  nav .menu-desktop {
+    padding-right: 15rem;
+  }
+}
+
+@media (max-width: 1440px) {
+  nav .logo {
+    padding-left: 10rem;
+  }
+
+  nav .menu-desktop {
+    padding-right: 10rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  nav .logo {
+    padding-left: 3rem;
+  }
+
+  nav .menu-desktop {
+    padding-right: 3rem;
+  }
+}

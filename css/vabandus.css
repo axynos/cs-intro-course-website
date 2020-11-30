@@ -166,6 +166,10 @@ main a.button {
   padding-top: 1.5rem;
 }
 
+.email-preview p {
+  color: black;
+}
+
 p#email-preview {
   font-weight: 500;
   max-width: 30rem;
