@@ -26,9 +26,9 @@ function chooseTemplate(data) {
 */
 function assembleApology(template, data) {
     const dataWithPlaceholders = {
-        subject: data.subject || (data.seriousness === 'lõputöö' ? '<teema>' : '<aine>'),
-        teacher: data.teacher || '<õppejõud>',
-        student: data.student || '<nimi>',
+        subject: `<span class="placeholder">${data.subject || (data.seriousness === 'lõputöö' ? 'TEEMA' : 'AINE')}</span>`,
+        teacher: `<span class="placeholder">${data.teacher || 'ÕPPEJÕUD'}</span>`,
+        student: `<span class="placeholder">${data.student || 'NIMI'}</span>`,
     }
     const heading = template.heading(dataWithPlaceholders)
     const mail = template.mail(dataWithPlaceholders)

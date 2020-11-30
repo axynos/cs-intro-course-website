@@ -9,6 +9,10 @@ nav {
   grid-area: nav;
 }
 
+span.placeholder {
+  color: #007CF0
+}
+
 .container {
   grid-area: content;
   display: grid;
