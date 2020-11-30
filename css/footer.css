@@ -1,0 +1,66 @@
+footer {
+  padding: 0.75rem 30rem;
+  background-color: black;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'copyright menu'
+}
+
+footer a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  font-weight: 500;
+
+  opacity: 0.35;
+  transition: opacity 250ms ease-out;
+}
+
+footer:hover a {
+  opacity: 1;
+}
+
+footer a:visited {
+  color: white;
+}
+
+footer .copyright span {
+  margin-left: 0.5rem;
+  font-size: 1.15rem;
+}
+
+footer .copyright {
+  display: flex;
+  justify-content: flex-start;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  list-style: none;
+}
+
+footer ul li {
+  margin-left: 4rem;
+}
+
+footer ul li a {
+  -webkit-transition: all 150ms cubic-bezier(0.6, 0, 0.4, 1);
+       -o-transition: all 150ms cubic-bezier(0.6, 0, 0.4, 1);
+          transition: all 150ms cubic-bezier(0.6, 0, 0.4, 1);
+}
+
+footer ul li a:hover {
+  color: #008CF0;
+}
+
+footer ul li:first-of-type {
+  margin-left: 0rem;
+}
