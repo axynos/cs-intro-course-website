@@ -87,6 +87,8 @@ inputs.address.addEventListener('input', e => { updateData(); updateApology() })
 outputs.mailto.addEventListener('click', e => updateMailto())
 outputs.mailto.addEventListener('contextmenu', e => updateMailto())
 
+document.getElementById('reload-button').addEventListener('click', e => window.location.reload())
+
 // Kui tegemist on lõputööga, paneme aine asemel teema
 if (data.seriousness === 'lõputöö') {
     inputs.subject.placeholder = "TEEMA"

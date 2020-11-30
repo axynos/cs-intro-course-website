@@ -1,0 +1,26 @@
+body {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .message {
+  text-align: center;
+  margin-bottom: 30vh;
+
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+main .message p {
+  color: initial;
+}

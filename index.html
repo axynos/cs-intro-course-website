@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="et" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Avaleht — Vabanduste Generaator</title>
@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/pages/index.css">
     <link rel="stylesheet" href="css/ui.css">
     <link rel="stylesheet" href="css/footer.css">
   </head>
@@ -142,16 +142,16 @@
         <p>Saadame sulle parimad nipid igast olukorrast välja saamiseks just siis, kui neid vaja on.</p>
         <p>Ära küsi, kuidas me teame, et käes on õige aeg. Sa ei taha teada.</p>
       </div>
-      <aside>
+      <form id="submittable-form" autocomplete="off" data-target="https://docs.google.com/forms/d/e/1FAIpQLSekmQ9EhUFqMhgpODLlZ93DR3oUzp_MzWz9PFaNHxMh__PJWw/formResponse" data-action="uudiskirjaga-liitutud">
         <div>
-          <input class="inline" type="text" name="firstname" value="" placeholder="Eesnimi">
-          <input class="inline" type="text" name="lastname" value="" placeholder="Perekonnanimi">
+          <input class="inline" type="text" name="entry.989352402" required value="" placeholder="Eesnimi">
+          <input class="inline" type="text" name="entry.348281984" required value="" placeholder="Perekonnanimi">
         </div>
-        <input class="inline" type="text" name="email" value="" placeholder="E-post">
-        <a class="button block" href="https://mailchimp.com/">
+        <input class="inline" type="text" name="entry.861006364" required value="" placeholder="E-post">
+        <button type="submit" class="button block">
           Liitu uudiskirjaga<span class="material-icons">arrow_forward</span>
-        </a>
-      </aside>
+        </button>
+      </form>
     </section>
 
     <footer>
@@ -164,5 +164,7 @@
         <li><a href="saada-vabandus">Lisa vabandus</a></li>
       </ul>
     </footer>
+
+    <script src="js/form-sender.js"></script>
   </body>
 </html>
