@@ -5,10 +5,12 @@
     <title>Vabanduste Generaator</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/ui.css">
     <link rel="stylesheet" href="css/saada-vabandus.css">
+    <link rel="stylesheet" href="css/footer.css">
   </head>
   <body>
 
@@ -39,20 +41,32 @@
         </div>
 
         <div class="inputs">
-          <input id="subject-input" class="inline" type="text" name="entry.1840013867" required placeholder="VABANDUS">
+          <input id="subject-input" class="inline" type="text" name="entry.1840013867" required placeholder="VABANDUSE LÜHIKIRJELDUS">
         </div>
 
         <div class="email">
           <div class="email-preview">
+            <label>Vabanduse kiri</label>
             <textarea class="email-content" name="entry.2126048838" required placeholder="Lugupeetud õppejõud..."></textarea>
           </div>
 
           <div class="button-container center">
-            <button type="submit">Saada vabandus</button>
+            <button type="submit">Saada vabandus<span class="material-icons">arrow_forward</span></button>
           </div>
         </div>
       </form>
     </main>
+
+    <footer>
+      <div class="copyright">
+        <a href="/">Vabanduste Generaator<span class="material-icons">copyright</span></a>
+      </div>
+      <ul>
+        <li><a href="/">Avaleht</a></li>
+        <li><a href="#">Meist</a></li>
+        <li><a href="test.html">Lisa vabandus</a></li>
+      </ul>
+    </footer>
 
     <script src="js/pages/saada-vabandus.js"></script>
   </body>

@@ -86,10 +86,6 @@ nav .menu-desktop {
   text-transform: uppercase;
 }
 
-.menu-desktop li:not(:last-of-type) {
-  margin-right: 4rem;
-}
-
 .menu-desktop li a {
   text-decoration: none;
   color: #000000;
@@ -130,6 +126,20 @@ nav .menu-desktop {
   color: white
 }
 
+@media (min-width: 2000px) {
+  nav .logo {
+    padding-left: 15rem;
+  }
+
+  nav .menu-desktop {
+    padding-right: 15rem;
+  }
+
+  .menu-desktop li:not(:last-of-type) {
+    margin-right: 5rem;
+  }
+}
+
 @media (max-width: 2000px) {
   nav .logo {
     padding-left: 15rem;
@@ -137,6 +147,10 @@ nav .menu-desktop {
 
   nav .menu-desktop {
     padding-right: 15rem;
+  }
+
+  .menu-desktop li:not(:last-of-type) {
+    margin-right: 4rem;
   }
 }
 
@@ -148,6 +162,10 @@ nav .menu-desktop {
   nav .menu-desktop {
     padding-right: 10rem;
   }
+
+  .menu-desktop li:not(:last-of-type) {
+    margin-right: 3rem;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -157,5 +175,9 @@ nav .menu-desktop {
 
   nav .menu-desktop {
     padding-right: 3rem;
+  }
+
+  .menu-desktop li:not(:last-of-type) {
+    margin-right: 2rem;
   }
 }

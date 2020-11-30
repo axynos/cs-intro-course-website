@@ -1,8 +1,15 @@
+body {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 
   padding-top: 3rem;
 }
@@ -23,6 +30,8 @@ main form {
 main h3 {
   text-align: center;
   text-transform: uppercase;
+
+  margin-bottom: 5rem;
 }
 
 main .message {
@@ -36,7 +45,8 @@ main .message {
 }
 
 main form .form-radio-select {
-  margin-top: 0.25rem
+  margin-top: 0.25rem;
+  margin-bottom: 3rem;
 }
 
 main .inputs {
@@ -88,6 +98,12 @@ main .email {
   white-space: pre-wrap;
 }
 
+.email-preview label {
+  color: black;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
 main button {
   margin-top: 3rem;
   margin-bottom: 0rem;
@@ -104,5 +120,6 @@ main button {
 
   max-width: 30rem;
   min-height: 20rem;
-}
 
+  padding-left: 0;
+}
