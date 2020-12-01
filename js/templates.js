@@ -16,7 +16,7 @@ Siiralt teie,
 ${_.student || ' '}`
 
 // Mallid vabanduste jaoks
-const templates = {
+var templates = {
     lõputöö: [
         {
             overview: 'Ma ei oska oma aega planeerida',
