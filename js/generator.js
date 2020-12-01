@@ -8,11 +8,28 @@
     Väljund:
         <vabanduse mall JS=i objektina>
 */
-
 function chooseTemplate(data) {
     const possibleTemplates = templates[data.seriousness] || templates.kodutöö
-    return possibleTemplates[Math.floor(Math.random() * possibleTemplates.length)]
+    const previousTemplate = parseInt(window.sessionStorage.getItem('previousTemplate'), 10)
+
+    let chosenTemplate = Math.floor(Math.random() * possibleTemplates.length)
+    if (possibleTemplates.length > 1) {
+        while (chosenTemplate === previousTemplate) {
+            chosenTemplate = Math.floor(Math.random() * possibleTemplates.length)
+        }
+    }
+
+    window.sessionStorage.setItem('previousTemplate', String(chosenTemplate))
+    return possibleTemplates[chosenTemplate]
 }
+
+// Väike test, et kontrollida kas valitud mallide jaotus on ühtlane
+/*const results = new Map([[0,0],[1,0],[2,0],[3,0],[4,0],[5,0]])
+for (let i = 0; i < 600000; i++) {
+    const templateIndex = templates.kodutöö.indexOf(chooseTemplate({}))
+    results.set(templateIndex, results.get(templateIndex) + 1)
+}
+console.log(results)*/
 
 /*
     Koostab malli ning andmete põhjal vabanduse, kuhu on kõik andmed sisestatud. Sealhulgas koostab meili, mailto lingi meili saatmiseks ning meili pealkirja
